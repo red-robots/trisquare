@@ -9,19 +9,19 @@ add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
         array(
-            'post_type' => 'testimonials',
-            'menu_name' => 'Testimonials',
-            'plural'    => 'Testimonials',
-            'single'    => 'Testimonial',
-            'menu_icon' => 'dashicons-format-quote',
-            'supports'  => array('title','editor')
-        ),
-        array(
             'post_type' => 'team',
             'menu_name' => 'Team',
             'plural'    => 'Team',
             'single'    => 'Team',
             'menu_icon' => 'dashicons-groups',
+            'supports'  => array('title','editor')
+        ),
+        array(
+            'post_type' => 'testimonials',
+            'menu_name' => 'Testimonials',
+            'plural'    => 'Testimonials',
+            'single'    => 'Testimonial',
+            'menu_icon' => 'dashicons-format-quote',
             'supports'  => array('title','editor')
         ),
         array(

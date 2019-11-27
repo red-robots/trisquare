@@ -71,6 +71,11 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+.site {
+	position: relative;
+	overflow-x: hidden;
+    overflow-y: auto;
+}
 #content {
 	margin-top: 20px;
 }
