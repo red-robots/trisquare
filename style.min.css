@@ -1829,16 +1829,18 @@ body.home #content.wrapper{max-width:100%;width:100%;padding:0}
 #content .gform_wrapper input{-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 #content .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),#content .gform_wrapper textarea,#content .gform_wrapper select{box-shadow:none;border:0;border-bottom:1px solid #333;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;background-color:transparent}
 #content .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){height:35px;line-height:35px}
-#content .gform_wrapper textarea,#content .gform_wrapper textarea.large{height:100px}
+#content .gform_wrapper textarea,#content .gform_wrapper textarea.large{height:90px;margin-top:12px}
+#content .gform_wrapper textarea:focus,#content .gform_wrapper textarea.large:focus{outline:0}
 #content .gform_wrapper .gfield_required{color:#0033a0}
 #content .gform_wrapper .gform_footer{padding-top:0;margin-top:25px}
 #content .gform_wrapper .gform_footer input.button{background:#0033a0;padding:6px 20px;border:0;-webkit-appearance:none;box-shadow:none;box-shadow:none;color:#FFF;font-size:18px;margin:0}
 #content .gform_wrapper .gform_footer input.button:hover{background:#4d70bd}
-body #content .gform_wrapper ul li.gfield{padding-right:0 !important;padding-left:0 !important;position:relative}
-body #content .gform_wrapper ul li.gfield label.gfield_label{position:absolute;left:2px;top:10px;font-size:14px;font-weight:300;color:#acb0b9}
+body #content .gform_wrapper ul li.gfield{padding-right:0 !important;padding-left:0 !important;margin-top:18px;position:relative}
+body #content .gform_wrapper ul li.gfield label.gfield_label{position:absolute;left:2px;top:10px;font-size:14px;font-weight:300;color:#acb0b9;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 body #content .gform_wrapper ul li.gfield div.ginput_container{position:relative;z-index:5}
 body #content .gform_wrapper ul li.gfield div.ginput_container input{background:transparent}
 body #content .gform_wrapper ul li.gfield div.ginput_container input:focus{outline:0;border-bottom:1px solid #0033a0}
+body #content .gform_wrapper ul li.gfield label.gfield_label.onfocus{top:-10px;font-size:12px}
 .full-wrapper{width:100%;float:left}
 .site-footer{font-size:13px;font-weight:300;line-height:1.6}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}

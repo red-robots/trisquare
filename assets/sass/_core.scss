@@ -700,7 +700,11 @@ body.home #content.wrapper {
 	}
 	textarea,
 	textarea.large {
-		height: 100px;
+		height: 90px;
+		margin-top: 12px;
+		&:focus {
+			outline: none;
+		}
 	}
 	.gfield_required {
 		color: $primary;
@@ -727,6 +731,7 @@ body.home #content.wrapper {
 body #content .gform_wrapper ul li.gfield {
 	padding-right: 0!important;
 	padding-left: 0!important;
+	margin-top: 18px;
 	position: relative;
 	label.gfield_label {
 		position: absolute;
@@ -735,6 +740,7 @@ body #content .gform_wrapper ul li.gfield {
 		font-size: 14px;
 		font-weight: 300;
 		color: #acb0b9;
+		transition: all ease-out .3s;
 	}
 	div.ginput_container {
 		position: relative;
@@ -746,6 +752,10 @@ body #content .gform_wrapper ul li.gfield {
 				border-bottom: 1px solid $primary;
 			}
 		}
+	}
+	label.gfield_label.onfocus {
+		top: -10px;
+		font-size: 12px;
 	}
 }
 
