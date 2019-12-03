@@ -1,8 +1,8 @@
 $primary: #0033a0;
-$color_link: royalblue;
+$color_link: #084ee2;
 $color_link_visited: purple;
 $color_link_hover: midnightblue;
-$color_text_main: #404040;
+$color_text_main: #5a6771;
 $color_menu_link: #5a6771;
 
 $font_main: 'Merriweather', serif;
@@ -12,8 +12,9 @@ $font_pre: "Courier 10 Pitch", Courier, monospace;
 
 $xswidth: 480px;
 $tabwidth: 600px;
-$midwidth: 900px;
+$midwidth: 1000px;
 $deskwidth: 1200px;
+$wrapper_width: 1200px;
 
 @mixin xs { @media (min-width: $xswidth) { @content; } }
 @mixin tab { @media (min-width: $tabwidth) { @content; } }
@@ -95,4 +96,12 @@ $deskwidth: 1200px;
 	@include flexbox();
 	@include flexbox-wrap(wrap);
 	@include flexbox-direction(row);
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }

@@ -30,7 +30,7 @@
 	    </div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></button>
+			<button class="menu-toggle" id="toggleMenu" aria-controls="primary-menu" aria-expanded="false"><span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span><span class="bar"></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu-wrap', 'link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
