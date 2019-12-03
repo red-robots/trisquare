@@ -1836,7 +1836,7 @@ body.home #content.wrapper{max-width:100%;width:100%;padding:0}
 #content .gform_wrapper .gform_footer input.button{background:#0033a0;padding:6px 20px;border:0;-webkit-appearance:none;box-shadow:none;box-shadow:none;color:#FFF;font-size:18px;margin:0}
 #content .gform_wrapper .gform_footer input.button:hover{background:#4d70bd}
 body #content .gform_wrapper ul li.gfield{padding-right:0 !important;padding-left:0 !important;margin-top:18px;position:relative}
-body #content .gform_wrapper ul li.gfield label.gfield_label{position:absolute;left:2px;top:10px;font-size:14px;font-weight:300;color:#acb0b9;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+body #content .gform_wrapper ul li.gfield label.gfield_label{position:absolute;left:0;top:2px;font-size:14px;font-weight:300;color:#acb0b9;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 body #content .gform_wrapper ul li.gfield div.ginput_container{position:relative;z-index:5}
 body #content .gform_wrapper ul li.gfield div.ginput_container input{background:transparent}
 body #content .gform_wrapper ul li.gfield div.ginput_container input:focus{outline:0;border-bottom:1px solid #0033a0}
