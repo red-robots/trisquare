@@ -1842,6 +1842,7 @@ body #content .gform_wrapper ul li.gfield div.ginput_container input{background:
 body #content .gform_wrapper ul li.gfield div.ginput_container input:focus{outline:0;border-bottom:1px solid #0033a0}
 body #content .gform_wrapper ul li.gfield label.gfield_label.onfocus{top:-18px;font-size:12px}
 body #content .gform_wrapper ul li.gfield#field_1_4 label.gfield_label.onfocus{top:-10px}
+body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .full-wrapper{width:100%;float:left}
 .site-footer{font-size:13px;font-weight:300;line-height:1.6}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}
