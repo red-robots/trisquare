@@ -205,8 +205,13 @@ body {
 	}
 	ul.menu > li:hover > a {
 		@include mid {
-			background: $primary;
+			background: transparent;
 			color: #FFF;
+			&:before {
+				opacity: 1;
+				width: 100%;
+				transform: scaleX(1);
+			}
 		}
 	}
 
