@@ -9,6 +9,14 @@ add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
         array(
+            'post_type' => 'projects',
+            'menu_name' => 'Projects',
+            'plural'    => 'Projects',
+            'single'    => 'Project',
+            'menu_icon' => 'dashicons-category',
+            'supports'  => array('title','editor')
+        ),
+        array(
             'post_type' => 'team',
             'menu_name' => 'Team',
             'plural'    => 'Team',
@@ -31,7 +39,7 @@ function js_custom_init() {
             'single'    => 'Location',
             'menu_icon' => 'dashicons-location',
             'supports'  => array('title','editor')
-        )
+        ),
     );
     
     if($post_types) {
