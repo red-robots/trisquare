@@ -36,6 +36,11 @@ a,input,button {
 .cf:after { clear: both; }
 .cf { *zoom: 1; }
 .text-center {text-align:center;}
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+		top: -46px;
+	}
+}
 
 /* Text meant only for screen readers. */
 .sr {
