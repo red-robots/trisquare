@@ -48,7 +48,7 @@ get_header(); ?>
 					<?php if ($row2_bgImage) { ?>
 					<div class="sectionBg" style="background-image:url('<?php echo $row2_bgImage['url'];?>')"></div>
 					<?php } ?>
-					<div class="wrapper">
+					<div class="wrapper maintext">
 						<div class="flexwrap">
 							<?php if ($row2_text) { ?>
 							<div class="fcol textcol">

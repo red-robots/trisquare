@@ -1002,7 +1002,11 @@ body #content .gform_wrapper ul li.gfield {
 		background-position: center;
 		background-repeat: no-repeat;
 		filter: grayscale(100%);
-		opacity: 0.15;
+		opacity: 0.13;
+	}
+	.maintext {
+		position: relative;
+		z-index: 10;
 	}
 	.fcol {
 		overflow:hidden;
