@@ -101,23 +101,25 @@ function js_custom_init() {
 // add_action( 'init', 'ii_custom_taxonomies', 0 );
 // function ii_custom_taxonomies() {
 //         $posts = array();
-//         // $posts = array(
-//         //     array(
-//         //         'post_type' => 'position',
-//         //         'menu_name' => 'Categories',
-//         //         'plural'    => 'Assignment Categories',
-//         //         'single'    => 'Category',
-//         //         'taxonomy'  => 'position_categories'
-//         //     ),
-//         // );
+//         $posts = array(
+//             array(
+//                 'post_type' => 'projects',
+//                 'menu_name' => 'Categories',
+//                 'plural'    => 'Project Categories',
+//                 'single'    => 'Project Category',
+//                 'taxonomy'  => 'project-categories',
+//                 'slug'      => 'gallery'
+//             ),
+//         );
     
 //     if($posts) {
 //         foreach($posts as $p) {
+//             $tax = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
 //             $p_type = ( isset($p['post_type']) && $p['post_type'] ) ? $p['post_type'] : ""; 
 //             $single_name = ( isset($p['single']) && $p['single'] ) ? $p['single'] : "Custom Post"; 
 //             $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
 //             $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
-//             $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
+//             $custom_slug = ( isset($p['slug']) && $p['slug'] ) ? $p['slug'] : $tax;
             
             
 //             if( $taxonomy && $p_type ) {
@@ -142,7 +144,7 @@ function js_custom_init() {
 //                 'show_in_rest' => true,
 //                 'show_admin_column' => true,
 //                 'query_var' => true,
-//                 'rewrite' => array( 'slug' => $taxonomy ),
+//                 'rewrite' => array( 'slug' => $custom_slug ),
 //               ));
 //             }
             

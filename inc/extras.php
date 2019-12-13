@@ -164,3 +164,7 @@ function get_social_links() {
     return $social;
 }
 
+function get_slider() {
+    return get_field('banner');
+}
+

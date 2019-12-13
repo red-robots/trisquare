@@ -70,18 +70,25 @@ a,input,button {
 }
 body {
 	font-family: $font_main;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 300;
-	line-height: 1.5;
+	line-height: 1.6;
 	color: $color_text_main;
 	position: relative;
 }
+h1,h2,h3,h4,h5,h6 {line-height:1.4}
+h1 {font-size:2rem;font-weight:500;}
+h2 {font-size:1.3rem;font-weight:500;}
+h3 {font-size:1.3rem;font-weight:500;}
+h4 {font-size:1.1rem;font-weight:500;}
+h5 {font-size:0.95rem;font-weight:500;}
+h6 {font-size:0.85rem;font-weight:500;}
 .wrapper {
 	max-width: $wrapper_width;
 	width: 100%;
 	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 .site {
 	position: relative;
@@ -90,6 +97,9 @@ body {
 }
 #content {
 	margin-top: 20px;
+}
+.default .site-main {
+	min-height: 30em;
 }
 /* Header */
 .site-header {
@@ -123,15 +133,18 @@ body {
 /* Navigation */
 .main-navigation {
 	@include mid {
-		width: 70%;
+		width: 80%;
 		position: absolute;
 		top: 0;
 		right: 0;
 		margin-top: 30px;
 	}
+	@include desk {
+		width: 70%;
+	}
 
 	.main-menu-wrap {
-		transition: all ease-out .5s;
+		transition: all ease-in-out .5s;
 		@include mid {
 			background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%);
 			background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
@@ -140,10 +153,14 @@ body {
 			box-shadow: 10px 1px 10px 2px rgba(0, 0, 0, 0.05);
 			display: inline-block;
 			float: right;
-			padding-left: 10%;
-			padding-right: 15%;
+			padding-left: 6%;
+			padding-right: 6%;
 			height: auto;
 			overflow: visible;
+		}
+		@include desk {
+			padding-left: 10%;
+			padding-right: 15%;
 		}
 	}
 	ul {
@@ -295,6 +312,35 @@ body {
 	}
 }
 
+body.nobanner {
+	.logo {
+		box-shadow: none;
+		a {
+			padding: 10px;
+		}
+		@include mid {
+			width: 130px;
+		}
+	}
+	.main-navigation {
+		@include mid {
+			margin-top: 20px;
+		}
+		.main-menu-wrap {
+			background: transparent;
+			box-shadow: none;
+		}
+	}
+	.entry-header {
+		margin-top: 45px;
+	}
+	h1.entry-title {
+		margin: 0 0 30px;
+		text-align: center;
+		color: $primary;
+	}
+}
+
 .menu-toggle {
 	display: block;
 	-webkit-appearance: none;
@@ -352,8 +398,8 @@ body {
 @media screen and (max-width: $midwidth - 1px) {
 	.main-menu-wrap {
 		height: 0px;
+		max-height: 0;
 		overflow: hidden;
-		opacity: 0;
 	}
 	.main-navigation ul.menu {
 		padding-top: 10px;
@@ -375,9 +421,9 @@ body {
 	}
 	.open {
 		.main-menu-wrap {
+			max-height: 100%;
 			height: auto;
 			overflow: visible;
-			opacity: 1;
 		}
 	}
 }
@@ -393,7 +439,7 @@ body {
 		height: auto;
 	}
 }
-body.home #masthead {
+body.hasbanner #masthead {
 	@include mid {
 		position: absolute;
 		top: 0;
@@ -411,13 +457,143 @@ body.home .banner-wrap {
 	}	
 	.slideItem img {
 		height: auto;
+		visibility: visible!important;
 	}
 }
+
 body.home #content.wrapper {
 	max-width: 100%;
 	width: 100%;
 	padding: 0 0;
 }
+
+.banner-image {
+	img {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
+}
+/* Slideshow */
+.swiper-container {
+	overflow: hidden;
+}
+.swiper-container,
+.swiper-wrapper {
+	width: 100%;
+	height: 350px;
+	@include tab {
+		height: 450px;
+	}
+	@include mid {
+		height: 600px;
+	}
+	@include desk {
+		height: 750px;
+	}
+}
+#slideshow.swiper-container {
+	width: 100%;
+	height: 100%;
+	.swiper-slide {
+		float: none!important;
+		background-size: cover;
+		background-position: center;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.slideCaption {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		&:before {
+			content:"";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.wrapper {
+			position: relative;
+			z-index: 10;
+			padding-left: 30px;
+			padding-right: 30px;
+			@include tab {
+				padding-left: 8%;
+				padding-right: 8%;
+			}
+			@include mid {
+				padding-left: 12%;
+				padding-right: 12%;
+			}
+			@include desk {
+				padding-left: 14%;
+				padding-right: 14%;
+			}
+		}
+	}
+	.caption {
+		font-size: 1.7rem;
+		font-weight: 400;
+		line-height: 1.2;
+		color: #FFF;
+		padding-top: 40px;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+		@include tab {
+			padding-top: 5%;
+			font-size: 2.5rem;
+		}
+		@include mid {
+			padding-top: 6%;
+		}
+	}
+	.slideBtn {
+		a.sbtn {
+			text-decoration: none;
+			display: inline-block;
+			color: #a11319;
+			font-size: 15px;
+			line-height: 1.2;
+			padding: 4px 12px 2px;
+			border: 2px solid $primary;
+			border-radius: 3px;
+			margin-top: 10px;
+			background: $primary;
+			color: #FFF;
+
+			@include tab {
+				padding: 6px 15px 5px;
+				font-size: 18px;
+			}
+			&:hover {
+				background: transparent;
+				color: $primary;
+			}
+		}	
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
+	}
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: #FFF;
+		opacity: 0.45;
+		&.swiper-pagination-bullet-active {
+			opacity: 1;
+		}
+	}
+}
+
 .hd2 {
 	font-size: 25px;
 	font-weight: 100;
@@ -429,19 +605,28 @@ body.home #content.wrapper {
 	padding-top: 40px;
 	padding-bottom: 30px;
 	position: relative;
+	.flexwrap {
+		@include flexgroup();
+	}
 }
+.section.text-middle,
 .row1.section {
 	padding-top: 40px;
 	padding-bottom: 60px;
 	.midtext {
-		display: inline-block;
+		display: block;
 		font-size: 20px;
 		font-weight: 300;
 		line-height: 1.5;
 		position: relative;
 		padding: 1% 7%;
-		max-width: 580px;
+		max-width: 600px;
 		width: 100%;
+		text-align: center;
+		margin: 0 auto;
+		&.midtextLg {
+			max-width: 730px;
+		}
 	}
 	span.corner {
 		display: block;
@@ -510,15 +695,21 @@ body.home #content.wrapper {
 		width: 100%;
 	}
 }
+body.subpage .row1.section {
+	.midtext {
+		max-width: 700px;
+	}
+}
 .row2.section {
-	background: #e9ebef;
 	padding-top: 0;
 	padding-bottom: 0;
+	background-color: #e9ebef;
 	.flexwrap {
 		@include flexgroup();
 	}
 	.col {
 		width: 100%;
+		overflow: hidden;
 	}
 	&.full .flexwrap {
 		max-width: $wrapper_width;
@@ -533,15 +724,29 @@ body.home #content.wrapper {
 	&.half {
 		.col {
 			width: 100%;
-			@include tab {
+			@include mid {
 				width: 50%;
 			}
+		}
+	}
+	.imagecol {
+		background-size:cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		@include mid {
+			background-image:none!important;
 		}
 	}
 	.imagecol img {
 		width: 100%;
 		height: auto;
 		float: left;
+		@include mid {
+			transform: scale(1.05);
+		}
+		@include desk {
+			transform: none;
+		}
 	}
 	.textcol {
 		padding: 30px 5%;
@@ -551,6 +756,10 @@ body.home #content.wrapper {
 		@include flexbox-justify(center);
 		@include tab {
 			font-size: 14px;
+		}
+		@include mid {
+			padding: 0 5%;
+			padding: 30px 5%;
 		}
 		h2 {
 			font-size: 25px;
@@ -604,10 +813,14 @@ body.home #content.wrapper {
 		position: relative;
 		z-index: 10;
 	}
-	.form-wrapper {
-		background: #FFF;
-		padding: 40px 5%;
-		box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+}
+.contact-form-wrapper {
+	background: #FFF;
+	padding: 40px 5%;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+	&.contactpage {
+		box-shadow: none;
+		padding: 0 0 40px;
 	}
 	.hd2 {
 		&:after {
@@ -775,6 +988,301 @@ body #content .gform_wrapper ul li.gfield {
 	}
 }
 
+.section.section-gallery {
+	background: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	.sectionBg {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: grayscale(100%);
+		opacity: 0.15;
+	}
+	.fcol {
+		overflow:hidden;
+		.inside {
+			padding: 20px;
+		}
+	}
+	&.half {
+		.flexwrap {
+			margin: 0 -15px;
+		}
+		.fcol {
+			width: 100%;
+			padding: 15px;
+			@include tab {
+				width: 50%;
+			}
+		}
+	}
+	.textcol {
+		.inside {
+			background: #FFF;
+			padding: 20px;
+			height: 100%;
+			box-shadow: 0 2px 9px rgba(0,0,0,0.2);
+			@include flexgroup-center();
+		}
+		h1,h2,h3,h4,h5,h6 {
+			margin-top: 0;
+			margin-bottom: 15px;
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 1.5em;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.fcol.imagecol {
+		.inside {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		div.img {
+			padding: 5px;
+			div {
+				height: 100%;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			@include tab {
+				width: 50%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				float: left;
+			}
+		}
+	}
+}
+.section.row3_text {
+	padding-top: 40px;
+	padding-bottom: 30px;
+	@include tab {
+		padding-top: 60px;
+		padding-bottom: 50px;
+	}
+}
+.section.team-list {
+	padding-top: 0;
+	.photo {
+		position: relative;
+		background-color: $color_grey;
+		float: left;
+		width: 100%;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.hasphoto {
+		.photo {
+			background-size:cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+	.nophoto .photo {
+		@include flexgroup-center();
+		&:before {
+			content:"Photo Coming Soon";
+			display: block;
+			width: 100%;
+			text-align: center;
+			font-size: 1.2rem;
+			line-height: 1.2;
+			color: #b9b9b9;
+			position: absolute;
+			z-index: 5;
+		}
+	}
+	.flexwrap {
+		margin: 0 -10px;
+		@include tab {
+			margin: 0 -20px;
+		}
+	}
+	.staffinfo {
+		padding: 10px;
+		width: 50%;
+		@include tab {
+			padding: 20px;
+			width: 50%;
+		}
+		@include mid {
+			width: 25%;
+		}
+		@media screen and (max-width: $xswidth) {
+			width: 100%;
+			padding: 20px 10px;
+		}
+		a {
+			display: block;
+			float: left;
+			width: 100%;
+		}
+	}
+	.titlediv {
+		width: 100%;
+		float: left;
+		position: relative;
+		margin-top: 8px;
+	}
+	h3.name {
+		margin: 0 0 2px;
+		color: $primary;
+		font-size: 1.1rem;
+		line-height: 1.2;
+		position: relative;
+		@include tab {
+			padding-right: 64px;
+		}
+	}
+	.jobtitle {
+		font-size: 0.75rem;
+		line-height: 1.3;
+	}
+	a.more {
+		display: block;
+		text-decoration: none;
+		font-size: 0.75rem;
+		font-weight: 500;
+		line-height: 1;
+		color: $primary;
+		margin-top: 8px;
+		width: auto;
+		@include tab {
+			display: inline-block;
+			position: absolute;
+			top: 5px;
+			right: 0;
+			margin-top: 0;
+		}
+		span {
+			display: inline-block;
+			transition: all ease-out .3s;
+		}
+		&:hover {
+			color: tint($primary,40%);
+			span {
+				transform: translateX(3px);
+			}
+		}
+	}
+}
+.section.projects-list {
+	padding-top: 0;
+	padding-bottom: 50px;
+	top: -15px;
+	.flexwrap {
+		margin: 0 -15px;
+	}
+	.project {
+		position: relative;
+		padding: 15px;
+		width: 100%;
+		@include tab {
+			width: 50%;
+		}
+		.inside {
+			background-color: $color_grey;
+			position: relative;
+			float: left;
+			width: 100%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		.projImg {
+			display: block;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.projname {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 10;
+			color: #FFF;
+			font-size: 1.5rem;
+			line-height: 1.3;
+			text-align: center;
+			background: rgba($primary,.5);
+			opacity: 0;
+			visibility: hidden;
+			transition: all ease-out .3s;
+			@include flexgroup-center();
+			@include flexbox-justify(center);
+			span {
+				display: block;
+				padding: 20px;
+				transition: all ease-out .3s;
+				transform: translateY(30%);
+			}
+		}
+		.projlink {
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			&:hover {
+				.projname {
+					opacity: 1;
+					visibility: visible;
+					span {
+						transform: translateY(0);
+					}
+				}
+			}
+		}
+		&.nophoto {
+			a.projlink {
+				&:before {
+					content:"Photo Coming Soon";
+					display: block;
+					font-size: 1.3rem;
+					line-height: 1.2;
+					color: shade($color_grey,15%);
+					text-align: center;
+					width: 100%;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transition: all ease-out .3s;
+					transform: translateY(-50%);
+				}
+				&:hover {
+					&:before {
+						opacity: 0.2;
+					}
+				}
+			}
+		}
+	}
+}
+
 /* Footer */
 .full-wrapper {
 	width: 100%;
@@ -797,7 +1305,7 @@ body #content .gform_wrapper ul li.gfield {
 	}
 	.logo-img {
 		display: block;
-		max-width: 160px;
+		max-width: 120px;
 		width: 100%;
 	}
 	.ftitle {
@@ -822,7 +1330,7 @@ body #content .gform_wrapper ul li.gfield {
 	&.left {
 		width: 30%;
 		background: $primary;
-		padding: 30px;
+		padding: 20px 30px;
 		@include flexgroup();
 		@include flexbox-align-items(center);
 		@include flexbox-justify(center);

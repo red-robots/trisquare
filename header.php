@@ -11,8 +11,10 @@
 
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
+<?php
+$hasBanner = ( get_slider() ) ? 'hasbanner':'nobanner';
+?>
+<body <?php body_class($hasBanner); ?>>
 <div id="page" class="site cf">
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
@@ -37,4 +39,4 @@
 	
 	<?php get_template_part('template-parts/banner'); ?>
 
-	<div id="content" class="site-content wrapper cf">
+	<div id="content" class="site-content cf">

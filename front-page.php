@@ -40,23 +40,27 @@
 			<?php } ?>
 
 			<?php  
-				$row3_title = get_field("row3_title");
-				$featured_staff = get_field("featured_staff");
-				$contactForm = get_field("contact_form");
+				//$row3_title = get_field("row3_title");
+				//$featured_staff = get_field("featured_staff");
+				//$contactForm = get_field("contact_form");
+				$formData = get_field("contact_form","option");
+				$formheading = ( isset($formData['heading']) && $formData['heading'] ) ? $formData['heading'] : '';
+				$featured_staff = ( isset($formData['featured_staff']) && $formData['featured_staff'] ) ? $formData['featured_staff'] : '';
+				$contactForm = ( isset($formData['contact_form_shortcode']) && $formData['contact_form_shortcode'] ) ? $formData['contact_form_shortcode'] : '';
 				$row3Cols = ($contactForm && $featured_staff) ? 'half':'full';
 				$row3Image = get_field("row3_bg");
 				$row3Style = ($row3Image) ? ' style="background-image:url('.$row3Image['url'].')"':'';
 			?>
 				
-			<?php if ($contactForm) { ?>
+			<?php if ($contactForm && do_shortcode($contactForm)) { ?>
 			<section class="section row3">
 				<?php if ($row3Image) { ?>
 				<div class="imageBg"<?php echo $row3Style ?>></div>	
 				<?php } ?>
 				<div class="wrapper">
-					<div class="form-wrapper">
-						<?php if ($row3_title) { ?>
-						<h2 class="hd2 text-center"><?php echo $row3_title ?></h2>	
+					<div class="contact-form-wrapper">
+						<?php if ($formheading) { ?>
+						<h2 class="hd2 text-center"><?php echo $formheading ?></h2>	
 						<?php } ?>
 						
 						<div class="flexwrap cf <?php echo $row3Cols ?>">
@@ -96,7 +100,7 @@
 
 							<?php if ($contactForm) { ?>
 								<div class="col contactform">
-									<?php echo $contactForm ?>
+									<?php echo do_shortcode($contactForm) ?>
 								</div>
 							<?php } ?>
 						</div>

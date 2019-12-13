@@ -1,10 +1,55 @@
 <?php
 $homeBanner = ( is_front_page() ) ? 'homepage':'subpage';
-$banner = get_field('banner');
-if($banner) { ?>
-<div class="banner-wrap cf <?php echo $homeBanner ?>">
-	<div class="slideItem">
-		<img src="<?php echo $banner['url'] ?>" alt="<?php echo $banner['title'] ?>" />
+$slides = get_slider();
+$count = 0;
+if( isset($slides['url']) && $slides['url'] ) {
+	$count = 0;
+} else {
+	$count = ($slides) ? count($slides) : 0; 
+}
+
+$slidesId = ($count>1) ? 'slideshow':'static-banner';
+$placeholder = get_bloginfo("template_url") . "/images/rectangle.png";
+
+if( is_front_page() ) {
+	if( $slides ) {  ?>
+		<div id="<?php echo $slidesId ?>" class="swiper-container banner-wrap cf homepage">
+			<div class="swiper-wrapper">
+
+				<?php if ( isset($slides['url']) && $slides['url'] ) { ?>
+
+					<div class="swiper-slide slideItem" style="background-image:url('<?php echo $slides['url'] ?>');">
+						<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+					</div>
+
+				<?php } else { ?>
+
+					<?php foreach ($slides as $img) { ?>
+	    				<div class="swiper-slide slideItem" style="background-image:url('<?php echo $img['url'] ?>');">
+	    					<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+	    				</div>
+	    			<?php } ?>
+
+				<?php } ?>
+
+			</div>
+
+			<?php if ($count>1) { ?>
+			    <div class="swiper-pagination"></div>
+			    <div class="swiper-button-next"></div>
+			    <div class="swiper-button-prev"></div>
+			<?php } ?>
+		</div>
+	<?php } ?>
+
+<?php } else { ?>
+	
+	<?php if( $slides ) {  ?>
+	<div id="static-banner" class="banner-wrap cf subpage">
+		<div class="banner-image cf">
+			<img src="<?php echo $slides['url'] ?>" alt="<?php echo $slides['title'] ?>" />
+		</div>
 	</div>
-</div>
+	<?php } ?>
+
 <?php } ?>

@@ -7,14 +7,24 @@
 
 jQuery(document).ready(function ($) {
 	
-	/*
-	*
-	*	Flexslider
-	*
-	------------------------------------*/
-	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
+	/* Slideshow */
+	var swiper = new Swiper('#slideshow', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		effect: 'slide', /* "fade", "cube", "coverflow" or "flip" */
+		loop: true,
+		autoplay: {
+			delay: 8000,
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+    });
 	
 	/*
 	*

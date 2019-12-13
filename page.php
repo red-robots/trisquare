@@ -11,19 +11,35 @@
  *
  * @package bellaworks
  */
-
+$banner = get_slider();
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area cf default">
+		<main id="main" data-id="<?php echo get_the_ID(); ?>" class="site-main cf" role="main">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				get_template_part( 'template-parts/content', 'page' );
+				<?php if ($banner) { ?>
+					<h1 class="entry-title" style="display:none"><?php the_title(); ?></h1>
+				<?php } else { ?>
+					<header class="entry-header wrapper">
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					</header>
+				<?php } ?>
+				
+				<?php if ( get_the_content() ) { ?>
+				<section class="section text-middle row1_text">
+					<div class="wrapper">
+						<div class="midtext">
+							<span class="corner topleft"></span><span class="corner topright"></span>
+							<span class="corner bottomleft"></span><span class="corner bottomright"></span>
+							<div class="text"><?php the_content(); ?></div>
+						</div>
+					</div>
+				</section>
+				<?php } ?>
 
-			endwhile; // End of the loop.
-			?>
+			<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
