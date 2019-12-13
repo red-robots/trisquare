@@ -53,10 +53,12 @@ get_header(); ?>
 							<?php if ($row2_text) { ?>
 							<div class="fcol textcol">
 								<div class="inside">
-									<div class="text"><?php echo $row2_text ?></div>
-									<?php if ($row2_btnName && $row2_btnLink) { ?>
-									<div class="btndiv"><a href="<?php echo $row2_btnLink ?>" class="btn btn-default"><?php echo $row2_btnName ?></a></div>	
-									<?php } ?>
+									<div class="text">
+										<?php echo $row2_text ?>
+										<?php if ($row2_btnName && $row2_btnLink) { ?>
+										<div class="btndiv"><a href="<?php echo $row2_btnLink ?>" class="btn btn-default"><?php echo $row2_btnName ?></a></div>	
+										<?php } ?>
+									</div>
 								</div>
 							</div>
 							<?php } ?>

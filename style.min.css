@@ -1785,6 +1785,8 @@ h6{font-size:.85rem;font-weight:500}
 .site{position:relative;overflow-x:hidden;overflow-y:auto}
 #content{margin-top:20px}
 .default .site-main{min-height:30em}
+.btn-default{background:#0033a0;display:inline-block;text-decoration:none;-webkit-apperance:none;box-shadow:none;text-shadow:none;border:0;cursor:pointer;color:#FFF;padding:12px 25px;font-size:13px;line-height:1.2;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.btn-default:hover{color:#FFF;background:#4d70bd}
 .site-header{position:relative}
 .logo{display:block;width:75px;float:left}
 @media(min-width:960px){.logo{width:220px;box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08)}
@@ -1953,6 +1955,7 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .section.section-gallery{background:#FFF;padding-top:50px;padding-bottom:50px}
 .section.section-gallery .sectionBg{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;-webkit-filter:grayscale(100%);filter:grayscale(100%);opacity:.13}
 .section.section-gallery .maintext{position:relative;z-index:10}
+.section.section-gallery .btndiv{margin-top:5px}
 .section.section-gallery .fcol{overflow:hidden}
 .section.section-gallery .fcol .inside{padding:20px}
 .section.section-gallery.half .flexwrap{margin:0 -15px}

@@ -101,6 +101,26 @@ h6 {font-size:0.85rem;font-weight:500;}
 .default .site-main {
 	min-height: 30em;
 }
+.btn-default {
+	background: $primary;
+	display: inline-block;
+	text-decoration: none;
+	-webkit-apperance:none;
+	box-shadow: none;
+	text-shadow: none;
+	border: none;
+	cursor: pointer;
+	color: #FFF;
+	padding: 12px 25px;
+    font-size: 13px;
+    line-height: 1.2;
+    transition: all ease-out .3s;
+    &:hover {
+    	color: #FFF;
+		background: tint($primary,30%);
+    }
+}
+
 /* Header */
 .site-header {
 	position: relative;
@@ -987,7 +1007,6 @@ body #content .gform_wrapper ul li.gfield {
 		margin-top: -3px;
 	}
 }
-
 .section.section-gallery {
 	background: #FFF;
 	padding-top: 50px;
@@ -1007,6 +1026,9 @@ body #content .gform_wrapper ul li.gfield {
 	.maintext {
 		position: relative;
 		z-index: 10;
+	}
+	.btndiv {
+		margin-top: 5px;
 	}
 	.fcol {
 		overflow:hidden;
