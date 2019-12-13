@@ -1882,8 +1882,8 @@ body.home #content.wrapper{max-width:100%;width:100%;padding:0}
 .section{padding-top:40px;padding-bottom:30px;position:relative}
 .section .flexwrap{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .section.text-middle,.row1.section{padding-top:40px;padding-bottom:60px}
-.section.text-middle .midtext,.row1.section .midtext{display:block;font-size:20px;font-weight:300;line-height:1.5;position:relative;padding:1% 7%;max-width:600px;width:100%;text-align:center;margin:0 auto}
-.section.text-middle .midtext.midtextLg,.row1.section .midtext.midtextLg{max-width:730px}
+.section.text-middle .midtext,.row1.section .midtext{display:block;font-size:20px;font-weight:300;line-height:1.5;position:relative;padding:1% 7%;max-width:700px;width:100%;text-align:center;margin:0 auto}
+.section.text-middle .midtext.midtextLg,.row1.section .midtext.midtextLg{max-width:750px}
 .section.text-middle span.corner,.row1.section span.corner{display:block;width:25px;height:26px;position:absolute;opacity:.5}
 .section.text-middle span.corner.topleft,.row1.section span.corner.topleft{top:0;left:0;border-left:1px solid #5a6771}
 .section.text-middle span.corner.topleft:before,.row1.section span.corner.topleft:before{content:"";display:block;width:100%;border-top:1px solid #5a6771;position:absolute;top:6px;left:-6px}

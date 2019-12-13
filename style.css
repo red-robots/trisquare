@@ -7195,13 +7195,13 @@ body.home #content.wrapper {
     line-height: 1.5;
     position: relative;
     padding: 1% 7%;
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
     text-align: center;
     margin: 0 auto; }
     .section.text-middle .midtext.midtextLg,
     .row1.section .midtext.midtextLg {
-      max-width: 730px; }
+      max-width: 750px; }
   .section.text-middle span.corner,
   .row1.section span.corner {
     display: block;
