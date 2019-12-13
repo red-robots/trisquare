@@ -1975,6 +1975,7 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 }.section.team-list{padding-top:0}
 .section.team-list .photo{position:relative;background-color:#eaeaea;float:left;width:100%}
 .section.team-list .photo img{width:100%;height:auto;float:left}
+.section.team-list .flexwrap{-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .section.team-list .hasphoto .photo{background-size:cover;background-position:center;background-repeat:no-repeat}
 .section.team-list .nophoto .photo{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .section.team-list .nophoto .photo:before{content:"Photo Coming Soon";display:block;width:100%;text-align:center;font-size:1.2rem;line-height:1.2;color:#b9b9b9;position:absolute;z-index:5}
