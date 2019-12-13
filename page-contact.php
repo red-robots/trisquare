@@ -19,13 +19,13 @@ get_header(); ?>
 				<?php } ?>
 
 				<?php /* ROW 1 */ ?>
-				<?php if ( $row1_text = get_field("row1_text") ) { ?>
+				<?php if ( get_the_content() ) { ?>
 				<section class="section text-middle row1_text">
 					<div class="wrapper">
 						<div class="midtext midtextLg">
 							<span class="corner topleft"></span><span class="corner topright"></span>
 							<span class="corner bottomleft"></span><span class="corner bottomright"></span>
-							<div class="text"><?php echo $row1_text; ?></div>
+							<div class="text"><?php the_content(); ?></div>
 						</div>
 					</div>
 				</section>
