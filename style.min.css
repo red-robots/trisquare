@@ -1955,22 +1955,27 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .section.section-gallery{background:#FFF;padding-top:50px;padding-bottom:50px}
 .section.section-gallery .sectionBg{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;-webkit-filter:grayscale(100%);filter:grayscale(100%);opacity:.13}
 .section.section-gallery .maintext{position:relative;z-index:10}
-.section.section-gallery .btndiv{margin-top:5px}
+@media screen and (max-width:380px){.section.section-gallery .maintext{padding-left:10px;padding-right:10px}
+}.section.section-gallery .btndiv{margin-top:5px}
 .section.section-gallery .fcol{overflow:hidden}
 .section.section-gallery .fcol .inside{padding:20px}
-.section.section-gallery.half .flexwrap{margin:0 -15px}
+.section.section-gallery .imagecol .flexwrap{margin:-5px -25px}
 .section.section-gallery.half .fcol{width:100%;padding:15px}
 @media(min-width:820px){.section.section-gallery.half .fcol{width:50%}
-}.section.section-gallery .textcol .inside{background:#FFF;padding:20px;height:100%;box-shadow:0 2px 9px rgba(0,0,0,0.2);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.section.section-gallery .textcol h1,.section.section-gallery .textcol h2,.section.section-gallery .textcol h3,.section.section-gallery .textcol h4,.section.section-gallery .textcol h5,.section.section-gallery .textcol h6{margin-top:0;margin-bottom:15px}
+}.section.section-gallery .textcol .inside{background:#FFF;padding:30px 35px;height:100%;box-shadow:0 2px 9px rgba(0,0,0,0.2);display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+@media(min-width:820px){.section.section-gallery .textcol .inside{padding:8% 10%}
+}.section.section-gallery .textcol h1,.section.section-gallery .textcol h2,.section.section-gallery .textcol h3,.section.section-gallery .textcol h4,.section.section-gallery .textcol h5,.section.section-gallery .textcol h6{margin-top:0;margin-bottom:15px}
 .section.section-gallery .textcol p{margin-top:0;margin-bottom:1.5em}
 .section.section-gallery .textcol p:last-child{margin-bottom:0}
-.section.section-gallery .fcol.imagecol .inside{padding-top:0;padding-bottom:0}
-.section.section-gallery .fcol.imagecol div.img{padding:5px}
-.section.section-gallery .fcol.imagecol div.img div{height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
+.section.section-gallery .fcol.imagecol .inside{padding-top:0;padding-bottom:0;width:100%}
+.section.section-gallery .fcol.imagecol div.img{padding:5px;position:relative;width:50%}
+@media(min-width:820px){.section.section-gallery .fcol.imagecol div.img{width:100%}
+}.section.section-gallery .fcol.imagecol div.img div{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}
 @media(min-width:820px){.section.section-gallery .fcol.imagecol div.img{width:50%}
 }.section.section-gallery .fcol.imagecol div.img img{width:100%;height:auto;float:left}
-.section.row3_text{padding-top:40px;padding-bottom:30px}
+.section.section-gallery .fcol.imagecol.full div.img{width:100%}
+@media screen and (max-width:380px){.section.section-gallery .fcol.imagecol div.img{width:100% !important}
+}.section.row3_text{padding-top:40px;padding-bottom:30px}
 @media(min-width:820px){.section.row3_text{padding-top:60px;padding-bottom:50px}
 }.section.team-list{padding-top:0}
 .section.team-list .photo{position:relative;background-color:#eaeaea;float:left;width:100%}

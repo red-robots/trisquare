@@ -1026,6 +1026,10 @@ body #content .gform_wrapper ul li.gfield {
 	.maintext {
 		position: relative;
 		z-index: 10;
+		@media screen and (max-width: $xswidth) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 	}
 	.btndiv {
 		margin-top: 5px;
@@ -1036,10 +1040,12 @@ body #content .gform_wrapper ul li.gfield {
 			padding: 20px;
 		}
 	}
-	&.half {
+	.imagecol {
 		.flexwrap {
-			margin: 0 -15px;
+			margin: -5px -25px;
 		}
+	}
+	&.half {
 		.fcol {
 			width: 100%;
 			padding: 15px;
@@ -1051,10 +1057,13 @@ body #content .gform_wrapper ul li.gfield {
 	.textcol {
 		.inside {
 			background: #FFF;
-			padding: 20px;
+			padding: 30px 35px;
 			height: 100%;
 			box-shadow: 0 2px 9px rgba(0,0,0,0.2);
 			@include flexgroup-center();
+			@include tab {
+				padding: 8% 10%;
+			}
 		}
 		h1,h2,h3,h4,h5,h6 {
 			margin-top: 0;
@@ -1072,10 +1081,17 @@ body #content .gform_wrapper ul li.gfield {
 		.inside {
 			padding-top: 0;
 			padding-bottom: 0;
+			width: 100%;
 		}
 		div.img {
 			padding: 5px;
+			position: relative;
+			width: 50%;
+			@include tab {
+				width: 100%;
+			}
 			div {
+				width: 100%;
 				height: 100%;
 				background-size: cover;
 				background-position: center;
@@ -1088,6 +1104,16 @@ body #content .gform_wrapper ul li.gfield {
 				width: 100%;
 				height: auto;
 				float: left;
+			}
+		}
+		&.full {
+			div.img {
+				width: 100%;
+			}
+		}
+		@media screen and (max-width: $xswidth) {
+			div.img {
+				width: 100%!important;
 			}
 		}
 	}

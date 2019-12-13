@@ -63,8 +63,8 @@ get_header(); ?>
 							</div>
 							<?php } ?>
 
-							<?php if ($row2_gallery) { ?>
-							<div class="fcol imagecol">
+							<?php if ($row2_gallery) { $count = count($row2_gallery); ?>
+							<div class="fcol imagecol <?php echo ($count>1) ? 'grid':'full';?>">
 								<div class="inside">
 									<div class="flexwrap">
 									<?php foreach ($row2_gallery as $g) {  ?>
