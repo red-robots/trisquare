@@ -20,7 +20,7 @@ if ( $team->have_posts() ) { ?>
 			?>
 			<div class="staffinfo <?php echo $hasphoto ?>">
 				<div class="photo"<?php echo $style ?>>
-					<?php if ($photo) { ?><img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" style="display:none;" /><?php } ?>
+					<?php if ($photo) { ?><img src="<?php echo $photo['sizes']['medium'] ?>" alt="<?php echo $photo['title'] ?>" style="display:none;" /><?php } ?>
 					<a href="<?php echo $pagelink ?>"><img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" /></a>
 				</div>
 				<div class="titlediv">
