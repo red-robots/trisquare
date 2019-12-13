@@ -61,7 +61,7 @@ get_header(); ?>
 										$officePhone = get_field("office_phone",$teamId);
 										$cellphone = get_field("cellphone",$teamId);
 										$email = get_field("email",$teamId);
-										$photoSrc = ($teamPhoto) ? $teamPhoto['url'] : get_bloginfo('template_url')."/images/square.png";
+										$photoSrc = ($teamPhoto) ? $teamPhoto['sizes']['medium'] : get_bloginfo('template_url')."/images/square.png";
 										$hasImage = ($teamPhoto) ? 'hasphoto':'nophoto';
 									?>
 									<div class="col featStaff">
