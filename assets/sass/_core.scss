@@ -633,20 +633,27 @@ body.home #content.wrapper {
 .row1.section {
 	padding-top: 40px;
 	padding-bottom: 60px;
-	.midtext {
-		display: block;
-		font-size: 20px;
-		font-weight: 300;
-		line-height: 1.5;
-		position: relative;
-		padding: 1% 7%;
-		max-width: 700px;
+	.text {
 		width: 100%;
-		text-align: center;
-		margin: 0 auto;
-		&.midtextLg {
-			max-width: 750px;
-		}
+	}
+}
+
+.midtext {
+	display: block;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.5;
+	position: relative;
+	padding: 1% 7%;
+	max-width: 700px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	&.midtextLg {
+		max-width: 750px;
+	}
+	&.small {
+		max-width: 500px;
 	}
 	span.corner {
 		display: block;
@@ -715,6 +722,7 @@ body.home #content.wrapper {
 		width: 100%;
 	}
 }
+
 body.subpage .row1.section {
 	.midtext {
 		max-width: 700px;
@@ -1338,6 +1346,188 @@ body #content .gform_wrapper ul li.gfield {
 	}
 }
 
+.projects-single-page {
+	.site-main {
+		min-height: 35em;
+	}
+	.entry-content {
+		margin: 3em 0 2em;
+	}
+}
+.section.projects-by-category {
+	top: -15px;
+	padding-top: 0;
+	padding-bottom: 50px;
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.imagebox {
+		width: 100%;
+		float: left;
+		margin: 15px 0;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.projname {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+		color: #FFF;
+		font-size: 1.2rem;
+		line-height: 1.3;
+		text-align: center;
+		background: rgba($primary,.5);
+		opacity: 0;
+		visibility: hidden;
+		transition: all ease-out .3s;
+		@include tab {
+			font-size: 1.5rem;
+		}
+		@include flexgroup-center();
+		@include flexbox-justify(center);
+		span {
+			display: block;
+			padding: 20px;
+			transition: all ease-out .3s;
+			transform: translateY(30%);
+		}
+	}
+	a.link {
+		text-decoration: none;
+		display: block;
+		width: 100%;
+		float: left;
+		position: relative;
+		&:hover {
+			.projname {
+				opacity: 1;
+				visibility: visible;
+				span {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+}
+.section.gallery-section {
+	padding-top: 60px;
+	padding-bottom: 70px;
+	&.half {
+		.main-image {
+			width: 100%;
+			float: left;
+			margin-bottom: 30px;
+			@include tab {
+				width: 58.5%;
+				margin-bottom: 0;
+			}
+		}
+		.galleries {
+			width: 100%;
+			float: left;
+			@include tab {
+				width: 39%;
+				float: right;
+			}
+		}
+	}
+	.main-image {
+		@include tab {
+			min-height: 500px;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		a {
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			span.zoom {
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+				background: rgba($primary,.35);
+				transition: all ease-in-out .3s;
+				opacity: 0;
+				visibility: hidden;
+				@include flexgroup-center();
+				@include flexbox-justify(center);
+				text-align: center;
+				.zoomIcon {
+					color: #FFF;
+					font-size: 2rem;
+				}
+			}
+			&:hover {
+				span.zoom {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+	.galleries {
+		.hide {
+			display: none!important;
+		}
+		.wrap {
+			margin: -10px;
+		}
+		.thumb {
+			width: 50%;
+			float: left;
+			padding: 10px;
+			@include mid {
+				width: 25%;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				float: left;
+			}
+		}
+		a {
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			background: transparent;
+			&:hover {
+				background: rgba($primary,.35);
+			}
+		}
+		.gimage {
+			width: 100%;
+			float: left;
+			background-size:cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			position: relative;
+		}
+	}
+}
+.fancybox-is-open .fancybox-bg {
+	opacity: .92;
+}
+body.single-projects {
+	.fancybox-stage {
+		margin:0 30px;
+	}
+}
 /* Footer */
 .full-wrapper {
 	width: 100%;
@@ -1402,9 +1592,12 @@ body #content .gform_wrapper ul li.gfield {
 		@include flexbox-align-items(center);
 		.inside {
 			width: 100%;
-			padding: 20px 5%;
+			padding: 0  5%;
 			@include flexgroup();
 			@include flexbox-align-items(center);
+		}
+		.flexcol {
+			padding: 20px 0;
 		}
 		.contact-info {
 			width: 235px;

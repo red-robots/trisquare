@@ -26,6 +26,48 @@ jQuery(document).ready(function ($) {
 		},
     });
 	
+	$('[data-fancybox]').fancybox({
+		protect: true,
+		loop: false,
+		buttons : ['close'],
+		hash : false,
+		afterLoad : function(instance, current) {
+			$(".fancybox-content").addClass('padded');
+	    }
+	});
+
+	$(document).on("click","a.thumbLink",function(e){
+		e.preventDefault();
+		var parent = $(this).parents(".thumb");
+		// var mainImgSrc = $("#photoBig").attr("data-main");
+		// var mainImg = '<a href="'+mainImgSrc+'"><img src="'+mainImgSrc+'" alt=""/></a>';
+		var url = $(this).attr("href");
+		var thumbClass = $(this).attr("data-thumb");
+		$("#photoBig a").attr("href",url);
+		$("#photoBig a img").attr("src",url);
+		$("#photoBig a").attr("data-thumb",thumbClass);
+
+		// var thumb = $(this).attr("data-partner");
+		// $(thumb).removeAttr("data-fancybox");
+		// var url = $(this).attr("href");
+		// $(this).addClass("hide");
+		// $(thumb).addClass('hide');
+
+		// var mainImgSrc = $("#photoBig").attr("data-main");
+		// var mainImg = '<a href="'+mainImgSrc+'"><img src="'+mainImgSrc+'" alt=""/></a>';
+		// parent.find(".gimage").attr("style","background-image:url('"+mainImgSrc+"')");
+		// parent.html(mainImg);
+		// $("#photoBig a").attr("href",url);
+		// $("#photoBig a img").attr("src",url);
+	});
+
+	$(document).on("click","#mainPhoto",function(e){
+		e.preventDefault();
+		var thumbClass = $(this).attr("data-thumb");
+		$(thumbClass).trigger("click");
+	});
+
+
 	/*
 	*
 	*	Colorbox

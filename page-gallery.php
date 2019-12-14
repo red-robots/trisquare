@@ -37,34 +37,32 @@ get_header(); ?>
 			<?php
 			/* GALLERIES */
 			$placeholder = get_bloginfo("template_url") . "/images/rectangle.png";
-			$args = array(
-				'posts_per_page'   => -1,
-				'post_type'        => 'projects',
-				'post_status'      => 'publish'
-			);
+			$terms = get_terms( array(
+			    'taxonomy' => 'project-categories',
+			    'hide_empty' => true,
+			));
 			
-			$projects = new WP_Query($args);
-			if ( $projects->have_posts() ) { ?>
+			if($terms) {  ?>
 			<section class="section projects-list cf">
 				<div class="wrapper">
 					<div class="flexwrap">
-						<?php while ( $projects->have_posts() ) : $projects->the_post();
-						$photo = get_field('featured_image'); 
-						$project_name = get_the_title();
-						$pagelink = get_permalink();
-						$hasphoto = ($photo) ? 'hasphoto':'nophoto';
-						$style = ($photo) ? ' style="background-image:url('.$photo['url'].')"':''
+						<?php foreach($terms as $t) { 
+							$photo = get_field('category_image',$t); 
+							$pagelink = get_term_link($t);
+							$termName = $t->name;
+							$hasphoto = ($photo) ? 'hasphoto':'nophoto';
+							$style = ($photo) ? ' style="background-image:url('.$photo['url'].')"':''
 						?>
 						<div class="project <?php echo $hasphoto ?>">
 							<div class="inside">
 								<a href="<?php echo $pagelink ?>" class="projlink">
 									<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['url'];?>')"></span><?php } ?>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
-									<span class="projname"><span><?php echo $project_name; ?></span></span>
+									<span class="projname"><span><?php echo $termName; ?></span></span>
 								</a>
 							</div>
 						</div>
-						<?php endwhile; wp_reset_postdata(); ?>
+						<?php } ?>
 					</div>
 				</div>
 			</section>
