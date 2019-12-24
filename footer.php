@@ -54,7 +54,7 @@
 		</div><!-- wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<div id="loaderOverlay"><div class="loaderSpin">Loading...</div></div>
 <?php wp_footer(); ?>
 
 </body>

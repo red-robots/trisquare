@@ -56,19 +56,31 @@ jQuery(document).ready(function ($) {
 		var pageURL = $(this).attr("data-url");
     	$("#loadGalleries").load(pageURL + " #gallerySection",function(){
 
-    		$('[data-fancybox]').fancybox({
-				protect: true,
-				loop: false,
-				buttons : ['close','thumbs','fullScreen'],
-				hash : false,
-				afterLoad : function(instance, current) {
-					var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
-					$(".fancybox-content").addClass('padded');
-					$(".fancybox-content").append(closeBtn);
-			    }
-			});
+    		$("#loaderOverlay").addClass("show");
+    		setTimeout(function(){
 
-    		$("#mainPhoto").trigger('click');
+    			$("#loaderOverlay").fadeIn("slow",function(){
+    				$(this).removeClass("show");
+    			});
+
+    			$('[data-fancybox]').fancybox({
+					protect: true,
+					loop: false,
+					buttons : ['close','thumbs','fullScreen'],
+					hash : false,
+					afterLoad : function(instance, current) {
+						var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
+						$(".fancybox-content").addClass('padded');
+						$(".fancybox-content").append(closeBtn);
+				    }
+				});
+
+	    		$("#mainPhoto").trigger('click');
+    			
+
+    		},800);
+
+    		
     	});
     });
 
