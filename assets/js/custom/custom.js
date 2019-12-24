@@ -29,12 +29,53 @@ jQuery(document).ready(function ($) {
 	$('[data-fancybox]').fancybox({
 		protect: true,
 		loop: false,
-		buttons : ['close'],
+		buttons : ['close','thumbs','fullScreen'],
 		hash : false,
 		afterLoad : function(instance, current) {
+			var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
 			$(".fancybox-content").addClass('padded');
+			$(".fancybox-content").append(closeBtn);
+	    },
+	    afterClose: function() {
+	        //alert("Closed!");
+	    },
+	    afterShow : function() {
+	        // $(':button').click(function() {
+	        //     $.fancybox.close();
+	        // })
 	    }
 	});
+
+	/* Open Pop-up on page load */
+	// $(document).ready(function() {
+ //        $("#mainPhoto").trigger('click');
+ //    });
+
+    $(document).on("click",".openGalleryBtn", function(e){
+		e.preventDefault();
+		var pageURL = $(this).attr("data-url");
+    	$("#loadGalleries").load(pageURL + " #gallerySection",function(){
+
+    		$('[data-fancybox]').fancybox({
+				protect: true,
+				loop: false,
+				buttons : ['close','thumbs','fullScreen'],
+				hash : false,
+				afterLoad : function(instance, current) {
+					var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
+					$(".fancybox-content").addClass('padded');
+					$(".fancybox-content").append(closeBtn);
+			    }
+			});
+
+    		$("#mainPhoto").trigger('click');
+    	});
+    });
+
+    $(document).on("click","#closefancyPic", function(e){
+		e.preventDefault();
+    	$.fancybox.close();
+    });
 
 	$(document).on("click","a.thumbLink",function(e){
 		e.preventDefault();

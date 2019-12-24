@@ -631,8 +631,8 @@ body.home #content.wrapper {
 }
 .section.text-middle,
 .row1.section {
-	padding-top: 40px;
-	padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 40px;
 	.text {
 		width: 100%;
 	}
@@ -1528,6 +1528,43 @@ body.single-projects {
 		margin:0 30px;
 	}
 }
+
+#closefancyPic {
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -10px; 
+	right: -10px; 
+	z-index: 1000;
+	background: rgba(0,0,0,.95);
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 100%;
+	border: 1px solid #FFF;
+	span {
+		font-family: $font_secondary;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 1;
+		position: relative;
+		top: 2px;
+	}
+}
+.fancybox-toolbar {
+	// opacity: 0 !important;
+	// visibility: hidden!important;
+	.fancybox-button--close {
+		display: none!important;
+	}
+}
+body.logged-in {
+	.fancybox-toolbar {
+		top: 32px!important;
+	}
+}
+
 /* Footer */
 .full-wrapper {
 	width: 100%;

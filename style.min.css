@@ -1881,7 +1881,7 @@ body.home #content.wrapper{max-width:100%;width:100%;padding:0}
 .hd2{font-size:25px;font-weight:100;margin:0 0 20px;position:relative}
 .section{padding-top:40px;padding-bottom:30px;position:relative}
 .section .flexwrap{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.section.text-middle,.row1.section{padding-top:40px;padding-bottom:60px}
+.section.text-middle,.row1.section{padding-top:20px;padding-bottom:40px}
 .section.text-middle .text,.row1.section .text{width:100%}
 .midtext{display:block;font-size:20px;font-weight:300;line-height:1.5;position:relative;padding:1% 7%;max-width:700px;width:100%;text-align:center;margin:0 auto}
 .midtext.midtextLg{max-width:750px}
@@ -2049,6 +2049,10 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .section.gallery-section .galleries .gimage{width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
 .fancybox-is-open .fancybox-bg{opacity:.92}
 body.single-projects .fancybox-stage{margin:0 30px}
+#closefancyPic{display:block;width:30px;height:30px;position:absolute;top:-10px;right:-10px;z-index:1000;background:rgba(0,0,0,0.95);color:#FFF;text-decoration:none;text-align:center;border-radius:100%;border:1px solid #FFF}
+#closefancyPic span{font-family:"Open Sans",sans-serif;font-size:18px;font-weight:500;line-height:1;position:relative;top:2px}
+.fancybox-toolbar .fancybox-button--close{display:none !important}
+body.logged-in .fancybox-toolbar{top:32px !important}
 .full-wrapper{width:100%;float:left}
 .site-footer{font-size:13px;font-weight:300;line-height:1.6}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}

@@ -26,7 +26,7 @@ get_header(); ?>
 					$mainImage = $gallery[0];
 					$placeholder = get_bloginfo("template_url") . "/images/square.png";
 					?>
-				<section class="section gallery-section cf <?php echo $colClass ?>">
+				<section id="gallerySection" class="section gallery-section cf <?php echo $colClass ?>">
 					<div class="inside">
 						<div id="photoBig" class="main-image" data-main="<?php echo $mainImage['url'] ?>">
 							<?php if ($count>1) { ?>
@@ -43,9 +43,14 @@ get_header(); ?>
 								<?php $j=1; foreach ($gallery as $g) { ?>
 								<div class="thumb <?php echo ($j==1) ? 'hide':'show';?>">
 									<div class="gimage" style="background-image:url('<?php echo $g['sizes']['medium'] ?>')">
-										<a href="<?php echo $g['url'] ?>" data-thumb=".img<?php echo $j?>" class="thumbLink"><img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" /></a>
+										<a href="<?php echo $g['url'] ?>" data-thumb=".img<?php echo $j?>" class="thumbLink">
+											<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+										</a>
 
-										<a href="<?php echo $g['url'] ?>" data-fancybox="images" rel="next" class="fancy img<?php echo $j?>" style="display:none!important;"><img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" /></a>
+										<a href="<?php echo $g['url'] ?>" data-fancybox="images" data-caption="<?php echo get_the_title(); ?>" rel="next" class="fancy img<?php echo $j?>" style="display:none!important;">
+											<!-- <img src="<?php //echo $placeholder ?>" alt="" aria-hidden="true" /> -->
+											<img src="<?php echo $g['sizes']['medium'] ?>" alt="<?php echo $g['title'] ?>" style="visibility:hidden;" />
+										</a>
 									</div>
 								</div>
 								<?php $j++; } ?>

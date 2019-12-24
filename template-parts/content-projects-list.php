@@ -42,7 +42,7 @@ if ( $posts->have_posts() ) { ?>
 			$pagelink = get_permalink();
 			?>
 			<div class="imagebox <?php echo $hasphoto ?>">
-				<a data-id="<?php the_ID() ?>" class="link" href="<?php echo $pagelink ?>">
+				<a href="#" data-url="<?php echo $pagelink ?>" data-id="<?php the_ID() ?>" class="link openGalleryBtn">
 					<?php if ($main_image) { ?>
 					<img src="<?php echo $main_image['url'] ?>" alt="<?php echo $main_image['title'] ?>" />
 					<?php } else { ?>
@@ -54,5 +54,5 @@ if ( $posts->have_posts() ) { ?>
 		<?php endwhile; wp_reset_postdata(); ?>	
 	</div>
 </section>
-
+<div id="loadGalleries" style="display:none;"></div>
 <?php } ?>

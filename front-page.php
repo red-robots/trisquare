@@ -68,7 +68,8 @@
 								<?php 
 									$teamId = $featured_staff->ID;
 									$teamName = $featured_staff->post_title;
-									$teamPhoto = get_field("photo",$teamId);
+									//$teamPhoto = get_field("photo",$teamId);
+									$teamPhoto = ( isset($formData['contact_photo']) && $formData['contact_photo'] ) ? $formData['contact_photo'] : '';
 									$jobTitle = get_field("job_title",$teamId);
 									$officePhone = get_field("office_phone",$teamId);
 									$cellphone = get_field("cellphone",$teamId);
