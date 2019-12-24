@@ -75,7 +75,7 @@ jQuery(document).ready(function ($) {
 				    }
 				});
 
-	    		$("#mainPhoto").trigger('click');
+	    		$("#firstGalleryPic").trigger('click');
     			
     		},800);
     		

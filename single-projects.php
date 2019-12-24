@@ -35,6 +35,13 @@ get_header(); ?>
 								<img src="<?php echo $mainImage['url'] ?>" alt="<?php echo $mainImage['title'] ?>">
 							<?php } ?>
 						</div>
+
+						<?php if ($mainImage) { ?>
+						<a href="<?php echo $mainImage['url'] ?>" id="firstGalleryPic" data-fancybox="images" data-caption="<?php echo get_the_title(); ?>" rel="next" class="fancy" style="display:none!important;">
+							<img src="<?php echo $mainImage['url'] ?>" alt="<?php echo $mainImage['title'] ?>">
+						</a>
+						<?php } ?>
+							
 						<?php //unset($gallery[0]); ?>
 						
 						<?php if ($count>1) { ?>
@@ -48,7 +55,6 @@ get_header(); ?>
 										</a>
 
 										<a href="<?php echo $g['url'] ?>" data-fancybox="images" data-caption="<?php echo get_the_title(); ?>" rel="next" class="fancy img<?php echo $j?>" style="display:none!important;">
-											<!-- <img src="<?php //echo $placeholder ?>" alt="" aria-hidden="true" /> -->
 											<img src="<?php echo $g['sizes']['medium'] ?>" alt="<?php echo $g['title'] ?>" style="visibility:hidden;" />
 										</a>
 									</div>
