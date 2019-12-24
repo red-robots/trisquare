@@ -54,9 +54,9 @@ jQuery(document).ready(function ($) {
     $(document).on("click",".openGalleryBtn", function(e){
 		e.preventDefault();
 		var pageURL = $(this).attr("data-url");
-    	$("#loadGalleries").load(pageURL + " #gallerySection",function(){
+		$("#loaderOverlay").addClass("show");
 
-    		$("#loaderOverlay").addClass("show");
+    	$("#loadGalleries").load(pageURL + " #gallerySection",function(){
     		setTimeout(function(){
 
     			$("#loaderOverlay").fadeIn("slow",function(){
@@ -77,9 +77,7 @@ jQuery(document).ready(function ($) {
 
 	    		$("#mainPhoto").trigger('click');
     			
-
     		},800);
-
     		
     	});
     });
