@@ -16,12 +16,12 @@ get_header(); ?>
 				?>
 				<article id="post<?php the_ID(); ?>" class="entry-content cf <?php echo ($photo) ? 'hasProfPic':'nophoto';?>">
 					<?php if ($photo) { ?>
-					<div class="photo animated fadeInLeft">
+					<div class="photo animated fadeIn">
 						<img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" />
 					</div>	
 					<?php } ?>
 
-					<div class="text animated fadeInRight">
+					<div class="text animated fadeIn">
 						<div class="head">
 							<h1 class="entry-title"><?php the_title() ?></h1>
 							<?php if ($title) { ?>
