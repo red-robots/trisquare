@@ -19,22 +19,24 @@ $hasBanner = ( get_slider() ) ? 'hasbanner':'nobanner';
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
 	<header id="masthead" class="site-header cf" role="banner">
-		<div class="wrapper logo-wrapper">
-			<?php if( get_custom_logo() ) { ?>
-	            <div class="logo">
-	            	<?php the_custom_logo(); ?>
-	            </div>
-	        <?php } else { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-	            </h1>
-	        <?php } ?>
-	    </div>
+		<div class="head-inner cf">
+			<div class="wrapper logo-wrapper">
+				<?php if( get_custom_logo() ) { ?>
+		            <div class="logo">
+		            	<?php the_custom_logo(); ?>
+		            </div>
+		        <?php } else { ?>
+		            <h1 class="logo">
+			            <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+		            </h1>
+		        <?php } ?>
+		    </div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" id="toggleMenu" aria-controls="primary-menu" aria-expanded="false"><span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span><span class="bar"></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu-wrap', 'link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<button class="menu-toggle" id="toggleMenu" aria-controls="primary-menu" aria-expanded="false"><span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span><span class="bar"></span></button>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'main-menu-wrap', 'link_before'=>'<span>','link_after'=>'</span>' ) ); ?>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 	
 	<?php get_template_part('template-parts/banner'); ?>

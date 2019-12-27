@@ -1788,6 +1788,8 @@ h6{font-size:.85rem;font-weight:500}
 .btn-default{background:#0033a0;display:inline-block;text-decoration:none;-webkit-apperance:none;box-shadow:none;text-shadow:none;border:0;cursor:pointer;color:#FFF;padding:12px 25px;font-size:13px;line-height:1.2;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .btn-default:hover{color:#FFF;background:#4d70bd}
 .site-header{position:relative}
+body.subpage.nobanner .site-header .head-inner{max-width:1200px;width:100%;margin:0 auto;position:relative}
+body.subpage.nobanner .site-header .main-navigation .main-menu-wrap{padding-left:0;padding-right:0}
 .logo{display:block;width:75px;float:left}
 @media(min-width:960px){.logo{width:220px;box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08)}
 }.logo a{background:#FFF;padding:12px 0 16px}
@@ -1958,6 +1960,8 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .section.section-gallery .sectionBg{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;background-repeat:no-repeat;-webkit-filter:grayscale(100%);filter:grayscale(100%);opacity:.13}
 .section.section-gallery .maintext{position:relative;z-index:10}
 @media screen and (max-width:380px){.section.section-gallery .maintext{padding-left:10px;padding-right:10px}
+}.section.section-gallery .maintext .flexwrap{margin-left:-15px;margin-right:-15px}
+@media screen and (max-width:380px){.section.section-gallery .maintext .flexwrap{margin-left:-10px;margin-right:-10px}
 }.section.section-gallery .btndiv{margin-top:5px}
 .section.section-gallery .fcol{overflow:hidden}
 .section.section-gallery .fcol .inside{padding:20px}
@@ -1979,7 +1983,7 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 @media screen and (max-width:380px){.section.section-gallery .fcol.imagecol div.img{width:100% !important}
 }.section.row3_text{padding-top:40px;padding-bottom:30px}
 @media(min-width:820px){.section.row3_text{padding-top:60px;padding-bottom:50px}
-}.section.team-list{padding-top:0}
+}.section.team-list{padding-top:0;max-width:1200px;width:100%;margin:0 auto;padding-left:30px;padding-right:30px}
 .section.team-list .photo{position:relative;background-color:#eaeaea;float:left;width:100%}
 .section.team-list .photo img{width:100%;height:auto;float:left}
 .section.team-list .flexwrap{-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -2053,6 +2057,31 @@ body.single-projects .fancybox-stage{margin:0 30px}
 #closefancyPic span{font-family:"Open Sans",sans-serif;font-size:18px;font-weight:500;line-height:1;position:relative;top:2px}
 .fancybox-toolbar .fancybox-button--close{display:none !important}
 body.logged-in .fancybox-toolbar{top:32px !important}
+body.subpage.nobanner .site-content{border-top:5px solid #0033a0}
+body.subpage .single-team h1.entry-title{color:#0033a0;text-align:left;margin:0;line-height:1.1}
+body.subpage .single-team .jobtitle{color:#0033a0}
+body.subpage .single-team .text p{margin-top:0;margin-bottom:20px}
+body.subpage .single-team .text p:last-child{margin-bottom:0}
+body.subpage .single-team .head{margin-bottom:20px}
+body.subpage .single-team .hasProfPic .photo{width:100%;float:left;margin-bottom:20px}
+@media(min-width:820px){body.subpage .single-team .hasProfPic .photo{width:36%;margin-bottom:0}
+}body.subpage .single-team .hasProfPic .photo img{width:100%;height:auto;float:left}
+body.subpage .single-team .hasProfPic .text{width:100%;float:left}
+@media(min-width:820px){body.subpage .single-team .hasProfPic .text{width:60%;float:right}
+}.staff-details{padding-top:40px;padding-bottom:50px}
+@media(min-width:820px){.staff-details{padding-top:90px;padding-bottom:100px}
+}.other-staff{background:#f3f3f3}
+.other-staff .section.team-list{max-width:100%;padding-top:50px;padding-bottom:50px;padding-left:0;padding-right:0}
+.other-staff .section.team-list h3.name{font-size:.95rem}
+.other-staff .section.team-list a.more,.other-staff .section.team-list .jobtitle{display:none !important}
+.staff-contact-info{margin:25px -38px 0 0}
+@media(min-width:820px){.staff-contact-info{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex}
+}.staff-contact-info .col{width:100%;padding:20px 0}
+@media(min-width:820px){.staff-contact-info .col{padding:0;width:50%}
+}.staff-contact-info a{display:inline-block;text-decoration:none;color:#0033a0}
+.staff-contact-info a:hover{color:#6685c6}
+.staff-contact-info .info{margin:3px 0;position:relative;padding-right:38px;padding-left:20px}
+.staff-contact-info .icon{color:#c3c3c3;font-size:15px;line-height:1;position:absolute;top:5px;left:0}
 .full-wrapper{width:100%;float:left}
 .site-footer{font-size:13px;font-weight:300;line-height:1.6}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}
