@@ -1726,11 +1726,17 @@ body.subpage .single-team {
 }
 
 /* Sitemap */
+.pagesitemap {
+	.midtext {
+		font-size: 15px;
+	}
+}
 .sitemapMenu {
 	text-align: center;
 	max-width: 700px;
 	width: 100%;
 	margin: 30px auto 0;
+	padding-bottom: 60px;
 	.sitemapnav {
 		// max-width: 700px;
 		width: 100%;

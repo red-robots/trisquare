@@ -6,7 +6,7 @@
 $banner = get_slider();
 get_header(); ?>
 
-	<div id="primary" class="content-area cf default">
+	<div id="primary" class="content-area cf default pagesitemap">
 		<main id="main" data-id="<?php echo get_the_ID(); ?>" class="site-main cf" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>

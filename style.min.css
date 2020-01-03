@@ -2088,7 +2088,8 @@ body.subpage .single-team .hasProfPic .text{width:100%;float:left}
 .staff-contact-info a:hover{color:#6685c6}
 .staff-contact-info .info{margin:3px 0;position:relative;padding-right:38px;padding-left:20px}
 .staff-contact-info .icon{color:#c3c3c3;font-size:15px;line-height:1;position:absolute;top:5px;left:0}
-.sitemapMenu{text-align:center;max-width:700px;width:100%;margin:30px auto 0}
+.pagesitemap .midtext{font-size:15px}
+.sitemapMenu{text-align:center;max-width:700px;width:100%;margin:30px auto 0;padding-bottom:60px}
 .sitemapMenu .sitemapnav{width:100%;margin:0 auto;text-align:left}
 @media(min-width:380px){.sitemapMenu .sitemapnav{width:auto;display:inline-block}
 }.sitemapMenu ul{margin:0;padding:0;list-style:none}
