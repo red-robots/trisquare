@@ -56,7 +56,8 @@ get_header(); ?>
 									<?php 
 										$teamId = $featured_staff->ID;
 										$teamName = $featured_staff->post_title;
-										$teamPhoto = get_field("photo",$teamId);
+										$teamPhoto = ( isset($formData['contact_photo']) && $formData['contact_photo'] ) ? $formData['contact_photo'] : '';
+										//$teamPhoto = get_field("photo",$teamId);
 										$jobTitle = get_field("job_title",$teamId);
 										$officePhone = get_field("office_phone",$teamId);
 										$cellphone = get_field("cellphone",$teamId);

@@ -96,10 +96,13 @@ h6 {font-size:0.85rem;font-weight:500;}
     overflow-y: auto;
 }
 #content {
-	margin-top: 20px;
+	margin-top: 0;
+	@include mid {
+		margin-top: 20px;
+	}
 }
 .default .site-main {
-	min-height: 30em;
+	min-height: 65vh;
 }
 .btn-default {
 	background: $primary;
@@ -436,6 +439,7 @@ body.nobanner {
 	.main-navigation ul.menu {
 		padding-top: 10px;
 		border-bottom: 5px solid $primary;
+		background: #FFF;
 	}
 	.main-navigation ul.menu > li {
 		width: 100%;
@@ -643,10 +647,18 @@ body.home #content.wrapper {
 }
 .section.text-middle,
 .row1.section {
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 40px;
+    @include mid {
+    	padding-top: 20px;
+    	padding-bottom: 40px;
+    }
 	.text {
 		width: 100%;
+		padding: 2em .8em;
+		@include tab {
+			padding: .45em 0;
+		}
 	}
 }
 
@@ -1568,13 +1580,17 @@ body.single-projects {
 	text-align: center;
 	border-radius: 100%;
 	border: 1px solid #FFF;
+	@media screen and (max-width: $tabwidth) {
+		display: none!important;
+	}
 	span {
 		font-family: $font_secondary;
 		font-size: 18px;
 		font-weight: 500;
 		line-height: 1;
-		position: relative;
-		top: 2px;
+		position: absolute;
+		top: 3px;
+		left: 10px;
 	}
 }
 .fancybox-toolbar {
@@ -1582,6 +1598,15 @@ body.single-projects {
 	// visibility: hidden!important;
 	.fancybox-button--close {
 		display: none!important;
+		@media screen and (max-width: $tabwidth) {
+			display: inline-block!important;
+		}
+	}
+	.fancybox-button {
+		@media screen and (max-width: $tabwidth) {
+			background: rgba(30,30,30,.95);
+			width: 50px;
+		}
 	}
 }
 body.logged-in {
@@ -1700,6 +1725,118 @@ body.subpage .single-team {
 	}
 }
 
+/* Sitemap */
+.sitemapMenu {
+	text-align: center;
+	max-width: 700px;
+	width: 100%;
+	margin: 30px auto 0;
+	.sitemapnav {
+		// max-width: 700px;
+		width: 100%;
+		margin: 0 auto;
+		text-align: left;
+		@include xs {
+			width: auto;
+			display: inline-block;
+		}
+	}
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		li {
+			position: relative;
+		}
+	}
+	ul > li {
+		padding-left: 12px;
+		margin-bottom: 2px;
+		> a:before {
+			content:"";
+			display: block;
+			width: 5px;
+			height: 5px;
+			background: $primary;
+			position: absolute;
+			top: 7px;
+			left: 0;
+			transition: all ease-out .3s;
+		}
+		ul {
+			padding-left: 10px;
+		}
+		ul li {
+			padding-left: 10px;
+			> a:before {
+				background: transparent;
+				border: 1px solid $primary;
+				border-radius: 100%;
+				width: 3px;
+				height: 3px;
+				top: 8px;
+				transition: all ease-out .3s;
+			}
+		}
+		ul li:hover > a:before {
+			border-color: $primary;
+			background: transparent;
+		}
+	}
+	ul.menu > li > a:hover:before {
+		background: tint($primary,40%);
+	}
+	ul.menu {		
+		@include tab {
+			column-count: 2;
+		}
+		ul a {
+			padding: 0 0 0 2px;
+		}
+	}
+	ul.menu > li {
+		width: 100%;
+		@include tab {
+			margin-left: 25%;
+			width: 230px;
+
+		}
+	}
+	a {
+		color: $primary;
+		text-decoration: none;
+		display: inline-block;
+		&:hover {
+			color: tint($primary,40%);
+		}
+	}
+}
+
+/* 404 page */
+body.nobanner .page404,
+.page404 {
+	.site-main {
+		min-height: 65vh;
+	}
+	h1.entry-title {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	.text-middle {
+		padding-top: 10vh;
+		padding-bottom: 10vh;
+	}
+	.sitemapMenu {
+		margin-top: 20px;
+	}
+}
+
 /* Footer */
 .full-wrapper {
 	width: 100%;
@@ -1764,9 +1901,12 @@ body.subpage .single-team {
 		@include flexbox-align-items(center);
 		.inside {
 			width: 100%;
-			padding: 0  5%;
+			padding: 20px  5%;
 			@include flexgroup();
 			@include flexbox-align-items(center);
+			@include tab {
+				padding: 0  5%;
+			}
 		}
 		.flexcol {
 			padding: 20px 0;
@@ -1793,6 +1933,10 @@ body.subpage .single-team {
 	}
 	li {
 		float: left;
+		width: 100%;
+		@include tab {
+			width: auto;
+		}
 	}
 	a {
 		display: inline-block;
@@ -1812,7 +1956,9 @@ body.subpage .single-team {
 		}
 		&.right .footer-menu-wrap ul {
 			padding: 0 0;
-			margin: 0 -15px;
+			width: 100%;
+			float: left;
+			margin: 15px -15px;
 		}
 	}
 }

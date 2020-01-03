@@ -35,7 +35,7 @@
 						<div class="flexcol social col6">
 							<div class="ftitle">Follow Us</div>
 							<?php foreach ($social as $k=>$s) { ?>
-							<a href="<?php echo $s['link'] ?>"><span class="sr"><?php echo $k ?></span><i class="<?php echo $s['icon'] ?>"></i></a>	
+							<a href="<?php echo $s['link'] ?>" target="_blank"><span class="sr"><?php echo $k ?></span><i class="<?php echo $s['icon'] ?>"></i></a>	
 							<?php } ?>
 						</div>	
 						<?php } ?>

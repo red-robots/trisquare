@@ -17,19 +17,18 @@ get_header(); ?>
 	<div id="primary" class="content-area cf default page404">
 		<main id="main" class="site-main cf" role="main">
 
-			<header class="entry-header wrapper">
-				<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bellaworks' ); ?></h1>
-			</header>
-			
 			<section class="section text-middle row1_text">
 				<div class="wrapper">
 					<div class="midtext">
 						<span class="corner topleft"></span><span class="corner topright"></span>
 						<span class="corner bottomleft"></span><span class="corner bottomright"></span>
 						<div class="text">
-							<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'bellaworks' ); ?></p>
+							<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bellaworks' ); ?></h1>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below.', 'bellaworks' ); ?></p>
 						</div>
 					</div>
+
+					<?php get_template_part('template-parts/content','sitemap'); ?>
 				</div>
 			</section>
 
