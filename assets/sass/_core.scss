@@ -89,6 +89,10 @@ h6 {font-size:0.85rem;font-weight:500;}
 	margin: 0 auto;
 	padding-left: 30px;
 	padding-right: 30px;
+	@media screen and (max-width: $xswidth) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 .site {
 	position: relative;
@@ -659,6 +663,9 @@ body.home #content.wrapper {
 		@include tab {
 			padding: .45em 0;
 		}
+		@media screen and (max-width: $xswidth) {
+			padding: 1em .7em;
+		}
 	}
 }
 
@@ -678,6 +685,12 @@ body.home #content.wrapper {
 	}
 	&.small {
 		max-width: 500px;
+	}
+	&.pad {
+		padding: 3% 7%;
+		@media screen and (max-width: $xswidth) {
+			padding: 7% 7%;
+		}
 	}
 	span.corner {
 		display: block;
@@ -1733,6 +1746,7 @@ body.subpage .single-team {
 }
 .section.why-us {
 	padding-top: 0;
+	padding-bottom: 60px;
 	.flexwrap {
 		@include flexgroup();
 		margin: 0 -20px;
@@ -1806,6 +1820,214 @@ body.subpage .single-team {
 		}
 		ul li {
 			margin-bottom: 10px;
+		}
+	}
+}
+
+.section.process {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	&:before {
+		content:"";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255,255,255,.85);
+	}
+	.section-content {
+		position: relative;
+		z-index: 5;
+	}
+	.steps {
+		padding-top: 40px;
+		padding-bottom: 30px;
+		margin: 0 -3px;
+		@include flexgroup();
+		.step {
+			width: 50%;
+			padding: 3px;
+			margin: 20px 0;
+			@include tab {
+				width: 50%;
+			}
+			p:last-child {
+				margin-bottom: 0;
+			}
+			@media screen and (max-width: $xswidth) {
+				width: 100%;
+			}
+		}
+		&.columns3 {
+			.step {
+				@include tab {
+					width: 33.3%;
+				}
+			}
+		}
+		&.columns4 {
+			.step {
+				@include tab {
+					width: 50%;
+				}
+				@include mid {
+					width: 25%;
+				}
+			}
+		}
+		&.columns5 {
+			.step {
+				@include tab {
+					width: 33.3%;
+				}
+				@include mid {
+					width: 20%;
+				}
+			}
+		}
+		&.columns6 {
+			.step {
+				@include tab {
+					width: 33.3%;
+				}
+			}
+		}
+		&.columnsMax {
+			.step {
+				@include tab {
+					width: 50%;
+				}
+				@include mid {
+					width: 25%;
+				}
+			}
+		}
+	}
+	.inside {
+		height: 100%;
+		position: relative;
+		background: #FFF;
+		box-shadow: 0 0 10px rgba(0,0,0,0.25);
+	}
+	.number {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		overflow: hidden;
+		span {
+			display: inline-block;
+			background: #7b94c9;
+			color: #FFF;
+			padding: 2px 15px 3px;
+			font-size: 16px;
+		}
+	}
+	.stitle {
+		margin: 0 0;
+		font-size: 1.1rem;
+		font-weight: 300;
+		line-height: 1.4;
+	}
+	.stext {
+		font-size: 0.75rem;
+		font-weight: 300;
+		line-height: 1.6;
+		@media screen and (max-width: $tabwidth) {
+			font-size: 0.8rem;
+		}
+	}
+	.steptext {
+		padding: 15px;
+	}
+}
+
+.stars {
+	position: relative;
+	text-align: center;
+	.wrap {
+		display: inline-block;
+	}
+	span {
+		display: inline-block;
+		position: relative;
+		font-size: 27px;
+		margin: 2px 6px;
+		@media screen and (max-width: $xswidth) {
+			font-size: 15px;
+			margin: 2px 3px;
+		}
+	}
+	span.blue {
+		color: $primary;
+	}
+	.shaded {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		z-index: 5;
+	}
+}
+
+.section.awards {
+	padding: 20px;
+	position: relative;
+	&:before {
+		content:"";
+		display: block;
+		width: calc(100% - 41px);
+		height: calc(100% - 41px);
+		border: 1px solid $primary;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+	.text-middle {
+		padding-top: 60px;
+    	padding-bottom: 50px;
+	}
+	.wrapper {
+		position: relative;
+		z-index: 10;
+	}
+	.midtext.pad {
+		padding: 4% 7% 8%;
+		@media screen and (max-width: $xswidth) {
+			padding: 15% 7% 20%;
+		}
+	}
+	.awards-list {
+		margin: 0 0;
+		padding: 35px 0 0;
+		list-style: none;
+		text-align: center;
+		li {
+			color: $primary;
+			position: relative;
+			font-size: 1.1rem;
+			font-weight: 500;
+			line-height: 1.2;
+			margin: 22px 0;
+			.starIcon {
+				font-size: 10px;
+				position: relative;
+				top: -4px;
+				left: -10px;
+			}
+			span.price {
+				font-weight: 300;
+			}
+			span.year {
+				font-size: .85rem;
+				font-weight: 300;
+				position: relative;
+			}
 		}
 	}
 }

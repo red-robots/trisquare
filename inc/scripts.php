@@ -27,15 +27,6 @@ function bellaworks_scripts() {
 			true 
 		);
 
-	wp_enqueue_script( 
-		'font-awesome', 
-		'https://use.fontawesome.com/8f931eabc1.js', 
-		array(), '20180424', 
-		true 
-	);
-
-
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
