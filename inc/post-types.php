@@ -98,6 +98,49 @@ function js_custom_init() {
     }
 }
 
+//Add the custom columns to the position post type:
+add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
+function set_custom_cpt_columns($columns) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+    
+    
+    if($post_type=='team') {
+        unset( $columns['title'] );
+        unset( $columns['date'] );
+        $columns['title'] = __( 'Name', 'bellaworks' );
+        $columns['photo'] = __( 'Photo', 'bellaworks' );
+        $columns['date'] = __( 'Date', 'bellaworks' );
+    }
+    
+    return $columns;
+}
+
+// Add the data to the custom columns for the book post type:
+add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
+function custom_post_column( $column, $post_id ) {
+    global $wp_query;
+    $query = isset($wp_query->query) ? $wp_query->query : '';
+    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+    
+    if($post_type=='team') {
+        switch ( $column ) {
+            case 'photo' :
+                $img = get_field('photo',$post_id);
+                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
+                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
+                if($img_src) {
+                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
+                } else {
+                    $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
+                }
+                $the_photo .= '</span>';
+                echo $the_photo;
+        }
+    }   
+}
+
 // Add new taxonomy, make it hierarchical (like categories)
 add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
@@ -153,46 +196,45 @@ function ii_custom_taxonomies() {
     }
 }
 
-//Add the custom columns to the position post type:
-add_filter( 'manage_posts_columns', 'set_custom_cpt_columns' );
-function set_custom_cpt_columns($columns) {
-    global $wp_query;
-    $query = isset($wp_query->query) ? $wp_query->query : '';
-    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
-    
-    
-    if($post_type=='team') {
-        unset( $columns['title'] );
-        unset( $columns['date'] );
-        $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['photo'] = __( 'Photo', 'bellaworks' );
-        $columns['date'] = __( 'Date', 'bellaworks' );
-    }
-    
-    return $columns;
+/*
+Taxonomy Custom Column
+manage_edit-$taxonomy_columns filter.
+*/
+add_filter("manage_edit-project-categories_columns", 'theme_columns'); 
+function theme_columns($theme_columns) {
+    $new_columns = array(
+        'cb' => '<input type="checkbox" />',
+        'name' => __('Name'),
+        'tax_image' => __('Image'),
+//      'description' => __('Description'),
+        'slug' => __('Slug'),
+        'posts' => __('Posts')
+        );
+    return $new_columns;
 }
 
-// Add the data to the custom columns for the book post type:
-add_action( 'manage_posts_custom_column' , 'custom_post_column', 10, 2 );
-function custom_post_column( $column, $post_id ) {
-    global $wp_query;
-    $query = isset($wp_query->query) ? $wp_query->query : '';
-    $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
-    
-    if($post_type=='team') {
-        switch ( $column ) {
-            case 'photo' :
-                $img = get_field('photo',$post_id);
-                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
-                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
-                if($img_src) {
-                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
-                } else {
-                    $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
-                }
-                $the_photo .= '</span>';
-                echo $the_photo;
-        }
+add_filter("manage_project-categories_custom_column", 'manage_theme_columns', 10, 3);
+function manage_theme_columns($out, $column_name, $theme_id) {
+    $theme = get_term($theme_id, 'project-categories');
+    switch ($column_name) {
+        case 'tax_image': 
+            $photo = get_field('category_image',$theme); 
+            $out = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
+            if($photo) {
+                $out .= '<span style="display:block;width:100%;height:100%;background:url('.$photo['url'].');background-size:cover;background-position:center"></span>';
+            } else {
+                $out .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
+            }
+            $out .= '</span>';
+            
+            // get header image url
+            //$data = maybe_unserialize($theme->description);
+            //$out .= "<img src=\"{$data['HEADER_image']}\" width=\"250\" height=\"83\"/>"; 
+            break;
+ 
+        default:
+            break;
     }
-    
+    return $out;    
 }
+

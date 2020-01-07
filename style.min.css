@@ -817,6 +817,7 @@ ul.menu ul{margin-bottom:16px}
 @media(min-width:960px){#masthead{background:transparent;height:auto}
 }@media(min-width:960px){body.hasbanner #masthead{position:absolute;top:0;left:0}
 }body.home .banner-wrap{width:100%;position:relative}
+body.home .banner-wrap .slideItem{background-size:cover;background-position:center;background-repeat:no-repeat}
 body.home .banner-wrap .slideItem,body.home .banner-wrap .slideItem img{width:100%;float:left}
 body.home .banner-wrap .slideItem img{height:auto;visibility:visible !important}
 body.home #content.wrapper{max-width:100%;width:100%;padding:0}
@@ -989,6 +990,13 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .section.projects-list .project .projlink:hover .projname span{-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}
 .section.projects-list .project.nophoto a.projlink:before{content:"Photo Coming Soon";display:block;font-size:1.3rem;line-height:1.2;color:#c7c7c7;text-align:center;width:100%;position:absolute;top:50%;left:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
 .section.projects-list .project.nophoto a.projlink:hover:before{opacity:.2}
+.section.projects-list.small-thumbs{border-top:5px solid #CCC;padding-top:40px}
+.section.projects-list.small-thumbs .wrapper{padding-left:0;padding-right:0}
+.section.projects-list.small-thumbs .project{width:50%}
+@media(min-width:820px){.section.projects-list.small-thumbs .project{width:33.3%}
+}@media(min-width:960px){.section.projects-list.small-thumbs .project{width:25%}
+}.section.projects-list.small-thumbs h2.stitle{margin:0 0 15px;font-size:1.3rem}
+.section.projects-list.small-thumbs .projname{font-size:1.2rem}
 .projects-single-page .site-main{min-height:35em}
 .projects-single-page .entry-content{margin:3em 0 2em}
 .section.projects-by-category{top:-15px;padding-top:0;padding-bottom:50px}
@@ -1141,7 +1149,7 @@ body.nobanner .page404 .sitemapMenu,.page404 .sitemapMenu{margin-top:20px}
 .site-footer{font-size:13px;font-weight:300;line-height:1.6}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}
 .site-footer a:hover{opacity:.45}
-.site-footer .flexwrap{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.site-footer .flexwrap{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .site-footer .logo-img{display:block;max-width:120px;width:100%}
 .site-footer .social a{font-size:22px;margin:2px 2px;height:40px;line-height:40px}
 .site-footer .accolades img{width:40px;height:auto}
@@ -1165,6 +1173,8 @@ body.nobanner .page404 .sitemapMenu,.page404 .sitemapMenu{margin-top:20px}
 }@media screen and (max-width:768px){.footcol .flexcol{width:100% !important;padding:10px 0 !important}
 .footcol.left{width:25%;padding:15px}
 .footcol.right{width:75%}
+}@media screen and (max-width:480px){.footcol.left{width:25%;height:100%;position:absolute;top:0;left:0}
+.footcol.right{width:75%;height:100%;position:relative;left:25%}
 }#loaderOverlay{display:none;position:fixed;top:0;left:0;z-index:3000;width:100%;height:100%;background:rgba(0,0,0,0.45)}
 #loaderOverlay.show{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .loaderSpin,.loaderSpin:after{border-radius:50%;width:5em;height:5em}

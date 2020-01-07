@@ -490,6 +490,11 @@ body.hasbanner #masthead {
 body.home .banner-wrap {
 	width: 100%;
 	position: relative;
+	.slideItem {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
 	.slideItem,
 	.slideItem img {
 		width: 100%;
@@ -1396,6 +1401,32 @@ body #content .gform_wrapper ul li.gfield {
 	}
 }
 
+.section.projects-list.small-thumbs {
+	border-top: 5px solid #CCC;
+	padding-top: 40px;
+	.wrapper {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.project {
+		width: 50%;
+		@include tab {
+			width: 33.3%;
+		}
+		@include mid {
+			width: 25%;
+		}
+	}
+	h2.stitle {
+		margin: 0 0 15px;
+		font-size: 1.3rem;
+	}
+	.projname {
+		font-size: 1.2rem;
+	}
+}
+
+
 .projects-single-page {
 	.site-main {
 		min-height: 35em;
@@ -2168,6 +2199,7 @@ body.nobanner .page404,
 		}
 	}
 	.flexwrap {
+		position: relative;
 		@include flexgroup();
 	}
 	.logo-img {
@@ -2286,6 +2318,21 @@ body.nobanner .page404,
 	}
 	.footcol.right {
 		width: 75%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.footcol.left {
+		width: 25%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}		
+	.footcol.right {
+		width: 75%;
+		height: 100%;
+		position: relative;
+		left: 25%;
 	}
 }
 #loaderOverlay {
