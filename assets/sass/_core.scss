@@ -1683,6 +1683,7 @@ body #content .gform_wrapper ul li.gfield {
 	    padding: 2px;
 	    background: rgba(0,0,0,.35);
 	    transition: all ease-out .3s;
+	    z-index: 20;
 	    &.zoomicon {
 	    	top: 10px;
 	    	right: 10px;

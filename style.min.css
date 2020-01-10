@@ -1042,7 +1042,7 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:-3px}
 .gallery-swiper .gallerypaginate a.next{right:10px}
 .gallery-swiper .gallerypaginate a.swiper-button-disabled{display:none}
 .gallery-swiper .gallerypaginate a svg{position:relative;top:10px;-webkit-filter:drop-shadow(0 1px 2px #656565);filter:drop-shadow(0 1px 2px #656565)}
-.gallery-swiper a.enlarge{position:absolute;top:10px;right:10px;display:block;width:30px;height:30px;padding:2px;background:rgba(0,0,0,0.35);-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.gallery-swiper a.enlarge{position:absolute;top:10px;right:10px;display:block;width:30px;height:30px;padding:2px;background:rgba(0,0,0,0.35);-webkit-transition:all ease-out .3s;transition:all ease-out .3s;z-index:20}
 .gallery-swiper a.enlarge.zoomicon{top:10px;right:10px;width:30px;height:30px}
 .gallery-swiper a.enlarge i{font-size:18px;position:relative;top:2px;color:rgba(255,255,255,0.85)}
 .gallery-swiper a.enlarge:hover{background:rgba(0,0,0,0.95)}
