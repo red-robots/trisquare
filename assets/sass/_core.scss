@@ -490,6 +490,7 @@ body.hasbanner #masthead {
 body.home .banner-wrap {
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 	.slideItem {
 		background-size: cover;
 		background-position: center;
@@ -540,10 +541,16 @@ body.home #content.wrapper {
 #slideshow.swiper-container {
 	width: 100%;
 	height: 100%;
+	.swiper-wrapper {
+		width: 100%;
+		height: 100%;
+	}
 	.swiper-slide {
 		float: none!important;
 		background-size: cover;
 		background-position: center;
+		height: 100%;
+		position: relative;
 		img {
 			width: 100%;
 			height: auto;
@@ -556,7 +563,10 @@ body.home #content.wrapper {
 		position: absolute;
 		top: 0;
 		left: 0;
-		text-align: center;
+		text-align: left;
+		z-index: 10;
+		@include flexgroup();
+		@include flexbox-align-items(flex-end);
 		&:before {
 			content:"";
 			display: block;
@@ -582,6 +592,43 @@ body.home #content.wrapper {
 			@include desk {
 				padding-left: 14%;
 				padding-right: 14%;
+			}
+		}
+	}
+	.slideMid {
+		max-width: 800px;
+		width: 100%;
+		margin-bottom: 10%;
+	}
+	.slideInside {
+		max-width: 1190px;
+		width: 100%;
+		margin: 0 auto;
+		padding: 30px;
+		overflow: hidden;
+		.slideTitle, .slideText {
+			display: inline-block;
+			background: rgba(255,255,255,.65);
+			color: $primary;
+		}
+		.slideTitle,
+		.slideText {
+			margin: 0 0;
+			padding: 5px 10px;
+		}
+		.slideTitle {
+			font-size: 2vw;
+			margin-bottom: .3vw;
+		}
+		.slideText {
+			font-size: 1.3vw;
+		}
+		@media screen and (max-width: 768px) {
+			.slideTitle {
+				font-size: 3.8vw;
+			}
+			.slideText {
+				font-size: 3vw;
 			}
 		}
 	}
@@ -636,6 +683,25 @@ body.home #content.wrapper {
 		&.swiper-pagination-bullet-active {
 			opacity: 1;
 		}
+	}
+	.swiper-slide-active {
+		.slideInside {
+			animation-name: fadeInLeft;
+		}
+	}
+}
+
+body.home .banner-wrap, 
+#slideshow.swiper-container {
+	height: 400px;
+	@include xs {
+		height: 60vh;
+	}
+	@include tab {
+		height: 80vh;
+	}
+	@include mid {
+		height: 95vh;
 	}
 }
 

@@ -182,3 +182,16 @@ function get_slider() {
     return $banner;
 }
 
+add_action('admin_head', 'bella_custom_admin_style');
+function bella_custom_admin_style() { ?>
+    <style type="text/css">
+        div[data-type="gallery"] tr[data-name="alt"],
+        div[data-type="gallery"] tr[data-name="description"] {
+            display: none!important;
+        }
+        div[data-type="gallery"] tr[data-name="caption"] textarea {
+            height: 100px;
+        }
+    </style>  
+<?php
+}

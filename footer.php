@@ -43,8 +43,16 @@
 						<?php if ($accolades) { ?>
 						<div class="flexcol accolades col6">
 							<div class="ftitle">Accolades</div>
-							<?php foreach ($accolades as $a) { ?>
-							<img src="<?php echo $a['url'] ?>" alt="<?php echo $a['title'] ?>" />	
+							<?php foreach ($accolades as $a) { 
+								$pagelink = get_field("page_link",$a['ID']);
+								$openLink = '';
+								$closeLink = '';
+								if($pagelink) {
+									$openLink = '<a href="'.$pagelink.'" target="_blank">';
+									$closeLink = '</a>';
+								}
+							?>
+							<?php echo $openLink; ?><img src="<?php echo $a['url'] ?>" alt="<?php echo $a['title'] ?>" /><?php echo $closeLink; ?>
 							<?php } ?>
 						</div>
 						<?php } ?>

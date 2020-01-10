@@ -24,8 +24,25 @@ if( is_front_page() ) {
 
 				<?php } else { ?>
 
-					<?php foreach ($slides as $img) { ?>
+					<?php foreach ($slides as $img) { 
+							$title = $img['title'];
+							$caption = $img['caption'];
+						?>
 	    				<div class="swiper-slide slideItem" style="background-image:url('<?php echo $img['url'] ?>');">
+	    					<?php if ($caption) { ?>
+	    					<div class="slideCaption">
+		    					<div class="slideInside animated">
+		    						<div class="slideMid">
+			    						<?php if ($title) { ?>
+			    						<h2 class="slideTitle"><?php echo $title; ?></h2><br>
+			    						<?php } ?>
+			    						<?php if ($caption) { ?>
+			    						<div class="slideText"><?php echo $caption; ?></div>	
+			    						<?php } ?>
+		    						</div>
+	    						</div>
+	    					</div>
+	    					<?php } ?>
 	    					<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 	    				</div>
 	    			<?php } ?>
