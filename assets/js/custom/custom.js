@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
     	var gallerySwiper = new Swiper(galleryIDSelector, {
 			slidesPerView: 1,
 			spaceBetween: 0,
-			effect: 'fade', 
+			effect: 'slide', 
 			loop: false,
 			autoplay: false,
 			pagination: {
