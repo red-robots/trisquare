@@ -38,18 +38,11 @@ jQuery(document).ready(function ($) {
 			effect: 'slide', 
 			loop: false,
 			autoplay: false,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
 			navigation: {
 				nextEl: '.gallery-next'+num,
 				prevEl: '.gallery-prev'+num,
 			},
 	    });
-	    gallerySwiper.on('slideChange', function () {
-	    	// Do something...
-		});
     });
 	
 	// $('[data-fancybox]').fancybox({
@@ -73,16 +66,31 @@ jQuery(document).ready(function ($) {
 	// });
 
 	$('.gallery-swiper').each(function(){
+		var mySwiper = $(this).find(".gallerySwipe");
 		$(this).find("a.enlarge").fancybox({
 			protect: true,
 			loop: false,
 			buttons : ['close'],
 			hash : false,
+			backFocus: false,
 			image: {
 			    preload: true
-			 },
+			},
+			fullScreen : {
+			    autoStart : false
+			},
+			helpers     : { 
+				overlay : {closeClick: false} 
+			},
+			keys : {
+			    close  : null
+			},
 			afterLoad : function(instance, current) {
+
 		    },
+		    afterClose: function() {
+
+		    }
 		});
 	});
 
@@ -122,6 +130,11 @@ jQuery(document).ready(function ($) {
  //        $("#mainPhoto").trigger('click');
  //    });
 
+ 	$(document).on("click","#closefancyPic", function(e){
+		e.preventDefault();
+    	$.fancybox.close();
+    });
+
     $(document).on("click",".openGalleryBtn", function(e){
 		e.preventDefault();
 		var pageURL = $(this).attr("data-url");
@@ -153,10 +166,7 @@ jQuery(document).ready(function ($) {
     	});
     });
 
-    $(document).on("click","#closefancyPic", function(e){
-		e.preventDefault();
-    	$.fancybox.close();
-    });
+    
 
 	$(document).on("click","a.thumbLink",function(e){
 		e.preventDefault();
