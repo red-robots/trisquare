@@ -673,7 +673,11 @@ body.home #content.wrapper {
 	}
 	.swiper-button-next,
 	.swiper-button-prev {
-		display: none;
+		&:after {
+			color: #FFF;
+			font-size: 40px;
+			text-shadow: 0 2px 4px rgba(0,0,0,0.65);
+		}
 	}
 	.swiper-pagination-bullet {
 		width: 10px;
@@ -2356,6 +2360,14 @@ body.subpage .single-team {
 				font-size: .85rem;
 				font-weight: 300;
 				position: relative;
+			}
+		}
+		.awardsLink {
+			display: inline-block;
+			text-decoration: none;
+			color: $primary;
+			&:hover {
+				color: tint($primary,50%);
 			}
 		}
 	}

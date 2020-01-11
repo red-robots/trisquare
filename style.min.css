@@ -851,7 +851,7 @@ body.home #content.wrapper{max-width:100%;width:100%;padding:0}
 }#slideshow.swiper-container .slideBtn a.sbtn{text-decoration:none;display:inline-block;color:#a11319;font-size:15px;line-height:1.2;padding:4px 12px 2px;border:2px solid #0033a0;border-radius:3px;margin-top:10px;background:#0033a0;color:#FFF}
 @media(min-width:820px){#slideshow.swiper-container .slideBtn a.sbtn{padding:6px 15px 5px;font-size:18px}
 }#slideshow.swiper-container .slideBtn a.sbtn:hover{background:transparent;color:#0033a0}
-#slideshow.swiper-container .swiper-button-next,#slideshow.swiper-container .swiper-button-prev{display:none}
+#slideshow.swiper-container .swiper-button-next:after,#slideshow.swiper-container .swiper-button-prev:after{color:#FFF;font-size:40px;text-shadow:0 2px 4px rgba(0,0,0,0.65)}
 #slideshow.swiper-container .swiper-pagination-bullet{width:10px;height:10px;background:#FFF;opacity:.45}
 #slideshow.swiper-container .swiper-pagination-bullet.swiper-pagination-bullet-active{opacity:1}
 #slideshow.swiper-container .swiper-slide-active .slideInside{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}
@@ -1169,6 +1169,8 @@ body.subpage .single-team .hasProfPic .text{width:100%;float:left}
 .section.awards .awards-list li .starIcon{font-size:10px;position:relative;top:-4px;left:-10px}
 .section.awards .awards-list li span.price{font-weight:300}
 .section.awards .awards-list li span.year{font-size:.85rem;font-weight:300;position:relative}
+.section.awards .awards-list .awardsLink{display:inline-block;text-decoration:none;color:#0033a0}
+.section.awards .awards-list .awardsLink:hover{color:#8099d0}
 .pagesitemap .midtext{font-size:15px}
 .sitemapMenu{text-align:center;max-width:700px;width:100%;margin:30px auto 0;padding-bottom:60px}
 .sitemapMenu .sitemapnav{width:100%;margin:0 auto;text-align:left}

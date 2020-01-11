@@ -177,8 +177,17 @@ get_header(); ?>
 
 								<?php if ($awards_list) { ?>
 								<ul class="awards-list">
-									<?php foreach ($awards_list as $a) { ?>
+									<?php foreach ($awards_list as $a) { 
+										$link = $a['link'];
+										$openLink = '';
+										$closeLink = '';
+										if($link) {
+											$openLink = '<a href="'.$link.'" target="_blank" class="awardsLink">';
+											$closeLink = '</a>';
+										}
+										?>
 										<li>
+											<?php echo $openLink; ?>
 											<i class="fas fa-star starIcon"></i> <?php echo $a['name'] ?>
 											<?php if ($a['price']) { ?>
 											<span class="price">(<?php echo $a['price'] ?>)</span>
@@ -186,6 +195,7 @@ get_header(); ?>
 											<?php if ($a['year']) { ?>
 											<span class="year"><?php echo $a['year'] ?></span>
 											<?php } ?>
+											<?php echo $closeLink; ?>
 										</li>
 									<?php } ?>
 								</ul>	
