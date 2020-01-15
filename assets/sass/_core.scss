@@ -148,9 +148,17 @@ body.subpage.nobanner .site-header {
 	display: block;
 	width: 75px;
 	float: left;
+	margin-left: 20px;
 	@include mid {
 		width: 220px;
 		box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.08);
+		margin-left: 5%;
+	}
+	@include desk {
+		margin-left: 8%;
+	}
+	@include xxl {
+		margin-left: 13%;
 	}
 	a {
 		background: #FFF;
@@ -166,8 +174,12 @@ body.subpage.nobanner .site-header {
 		float: left;
 	}
 }
-.logo-wrapper {
+.logo-wrapper.wrapper {
 	position: relative;
+	max-width: 100%;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
 }
 /* Navigation */
 .main-navigation {
@@ -348,6 +360,11 @@ body.subpage.nobanner .site-header {
 				margin-top: -12px;
 			}
 		}
+	}
+}
+body.home .main-navigation {
+	#primary-menu.menu > li:first-child {
+		display: none;
 	}
 }
 
@@ -729,12 +746,12 @@ body.home .banner-wrap,
     padding-top: 40px;
     padding-bottom: 40px;
     @include mid {
-    	padding-top: 20px;
-    	padding-bottom: 40px;
+    	padding-top: 10px;
+    	padding-bottom: 30px;
     }
 	.text {
 		width: 100%;
-		padding: 2em .8em;
+		padding: 2em 0;
 		@include tab {
 			padding: .45em 0;
 		}
@@ -750,16 +767,16 @@ body.home .banner-wrap,
 	font-weight: 300;
 	line-height: 1.5;
 	position: relative;
-	padding: 1% 7%;
-	max-width: 700px;
+	padding: 0 3%;
+	max-width: 1000px;
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
-	&.midtextLg {
-		max-width: 750px;
-	}
+	// &.midtextLg {
+	// 	max-width: 750px;
+	// }
 	&.small {
-		max-width: 500px;
+		max-width: 700px;
 	}
 	&.pad {
 		padding: 3% 7%;
@@ -768,7 +785,8 @@ body.home .banner-wrap,
 		}
 	}
 	span.corner {
-		display: block;
+		// display: block;
+		display: none!important;
 		width: 25px;
 		height: 26px;
 		position: absolute;
@@ -835,11 +853,11 @@ body.home .banner-wrap,
 	}
 }
 
-body.subpage .row1.section {
-	.midtext {
-		max-width: 700px;
-	}
-}
+// body.subpage .row1.section {
+// 	.midtext {
+// 		max-width: 700px;
+// 	}
+// }
 .row2.section {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -1056,6 +1074,8 @@ body.subpage .row1.section {
 		border-bottom: 1px solid #333;
 		transition: all ease-out .3s;
 		background-color: transparent;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
 		height: 35px;
@@ -1068,6 +1088,10 @@ body.subpage .row1.section {
 		&:focus {
 			outline: none;
 		}
+	}
+	textarea {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	.gfield_required {
 		color: $primary;
@@ -1094,8 +1118,14 @@ body.subpage .row1.section {
 body #content .gform_wrapper ul li.gfield {
 	padding-right: 0!important;
 	padding-left: 0!important;
-	margin-top: 18px;
+	margin-top: 35px;
 	position: relative;
+	&#field_1_4 {
+		margin-top: 20px;
+		label.gfield_label.onfocus {
+			top: -5px;
+		}
+	}
 	label.gfield_label {
 		position: absolute;
 		left: 0;
@@ -1117,14 +1147,11 @@ body #content .gform_wrapper ul li.gfield {
 		}
 	}
 	label.gfield_label.onfocus {
-		top: -18px;
-		font-size: 12px;
-	}
-	&#field_1_4 label.gfield_label.onfocus {
-		top: -10px;
+		top: -12px;
+		font-size: 11px;
 	}
 	&#field_1_2 {
-		margin-top: -3px;
+		margin-top: 25px;
 	}
 }
 .section.section-gallery {
@@ -2083,8 +2110,8 @@ body.subpage .single-team {
 /* Why Tri-Square */
 #primary.whyus {
 	.row1_text {
-		padding-top: 40px;
-		padding-bottom: 30px;
+		padding-top: 10px;
+		padding-bottom: 15px;
 	}
 }
 .section.why-us {
@@ -2333,7 +2360,7 @@ body.subpage .single-team {
 	}
 	.text-middle {
 		padding-top: 60px;
-    	padding-bottom: 50px;
+    	padding-bottom: 50px;	
 	}
 	.wrapper {
 		position: relative;

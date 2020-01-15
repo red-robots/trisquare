@@ -199,12 +199,12 @@ jQuery(document).ready(function ($) {
 		$('body').toggleClass('menu-open');
 	});
 
-	$(".row3.section .gform_wrapper .ginput_container input, .row3.section .gform_wrapper .ginput_container textarea").on("focus",function(){
+	$(".contactform .gform_wrapper .ginput_container input, .contactform .gform_wrapper .ginput_container textarea").on("focus",function(){
 		var parent = $(this).parents("li");
 		var Val = $(this).val();
 		parent.find("label.gfield_label").addClass("onfocus");
 	});
-	$(".row3.section .gform_wrapper .ginput_container input, .row3.section .gform_wrapper .ginput_container textarea").on("focusout blur",function(){
+	$(".contactform .gform_wrapper .ginput_container input, .contactform .gform_wrapper .ginput_container textarea").on("focusout blur",function(){
 		var parent = $(this).parents("li");
 		var Val = $(this).val();
 		if(Val) {

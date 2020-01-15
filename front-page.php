@@ -6,7 +6,7 @@
 			<?php if ( $row1_text = get_field("row1_text") ) { ?>
 			<section class="section row1 text-center">
 				<div class="wrapper">
-					<div class="midtext">
+					<div class="midtext small">
 						<span class="corner topleft"></span><span class="corner topright"></span>
 						<span class="corner bottomleft"></span><span class="corner bottomright"></span>
 						<div class="text"><?php echo $row1_text ?></div>

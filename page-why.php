@@ -182,7 +182,9 @@ get_header(); ?>
 										$openLink = '';
 										$closeLink = '';
 										if($link) {
-											$openLink = '<a href="'.$link.'" target="_blank" class="awardsLink">';
+											$parts = parse_external_url($link);
+											$target = $parts['target'];
+											$openLink = '<a href="'.$link.'" target="'.$target.'" class="awardsLink">';
 											$closeLink = '</a>';
 										}
 										?>
