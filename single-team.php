@@ -12,6 +12,7 @@ get_header(); ?>
 					$office_phone = get_field("office_phone");
 					$cellphone = get_field("cellphone");
 					$email = get_field("email");
+					$years_with_company = get_field("years_with_company");
 					$contact_info = array($office_phone,$cellphone,$email);
 				?>
 				<article id="post<?php the_ID(); ?>" class="entry-content cf <?php echo ($photo) ? 'hasProfPic':'nophoto';?>">
@@ -24,10 +25,16 @@ get_header(); ?>
 					<div class="text animated fadeIn">
 						<div class="head">
 							<h1 class="entry-title"><?php the_title() ?></h1>
-							<?php if ($title) { ?>
-							<div class="jobtitle"><?php echo $title ?></div>	
-							<?php } ?>
+							<div class="jobtitle">
+								<?php if ($title) { ?>
+								<span><?php echo $title ?></span>
+								<?php } ?>
+								<?php if ($years_with_company) { ?>
+								<span><?php echo ucwords($years_with_company); ?></span>
+								<?php } ?>
+							</div>	
 						</div>
+
 						<?php the_content(); ?>
 						
 						<?php if ($contact_info && array_filter($contact_info)) { ?>
@@ -37,6 +44,7 @@ get_header(); ?>
 								<i class="fas fa-phone icon"></i><a href="tel:<?php echo format_phone_number($office_phone); ?>"><?php echo $office_phone ?></a>
 							</div>	
 							<?php } ?>
+
 							<?php if ($cellphone) { ?>
 							<div class="info cellphone">
 								<i class="fas fa-mobile-alt icon"></i><a href="tel:<?php echo format_phone_number($cellphone); ?>"><?php echo $cellphone ?></a>

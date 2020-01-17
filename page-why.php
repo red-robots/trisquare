@@ -76,7 +76,20 @@ get_header(); ?>
 				$process_bg_image = get_field("process_bg_image"); 
 				$sectionStyle = ($process_bg_image) ? ' style="background-image:url('.$process_bg_image['url'].')"':'';
 				$process = get_field("process");
+				$process_description = get_field("process_description");
 				?>
+				
+				<?php if ($process_description) { ?>
+				<section class="section process-description text-middle row1_text">
+					<div class="wrapper">
+						<div class="midtext">
+							<span class="corner topleft"></span><span class="corner topright"></span>
+							<span class="corner bottomleft"></span><span class="corner bottomright"></span>
+							<div class="text"><?php echo $process_description ?></div>
+						</div>
+					</div>
+				</section>
+				<?php } ?>
 
 				<section class="section process"<?php echo $sectionStyle ?>>
 					<div class="section-content cf"> 
@@ -86,7 +99,7 @@ get_header(); ?>
 								<div class="midtext pad">
 									<span class="corner topleft"></span><span class="corner topright"></span>
 									<span class="corner bottomleft"></span><span class="corner bottomright"></span>
-									<div class="text"><?php echo $process_section_title; ?></div>
+									<div class="text lg"><?php echo $process_section_title; ?></div>
 								</div>
 							</div>
 						</div>

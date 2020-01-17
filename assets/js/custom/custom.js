@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
 		effect: 'slide', /* "fade", "cube", "coverflow" or "flip" */
 		loop: true,
 		autoplay: {
-			delay: 8000,
+			delay: 4000,
 		},
 		pagination: {
 			el: '.swiper-pagination',
