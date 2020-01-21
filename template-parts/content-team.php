@@ -17,6 +17,7 @@ if ( $team->have_posts() ) { ?>
 		<?php while ( $team->have_posts() ) : $team->the_post();
 		$photo = get_field('photo'); 
 		$job_title = get_field('job_title'); 
+		$years_with_company = get_field("years_with_company");
 		$staff_name = get_the_title();
 		$pagelink = get_permalink();
 		$hasphoto = ($photo) ? 'hasphoto':'nophoto';
@@ -29,8 +30,11 @@ if ( $team->have_posts() ) { ?>
 			</div>
 			<div class="titlediv">
 				<h3 class="name"><?php echo $staff_name ?></h3>
-				<?php if ($job_title) { ?>
-				<div class="jobtitle"><?php echo $job_title ?></div>	
+				<?php if ($job_title || $years_with_company) { ?>
+				<div class="jobtitle">
+					<div><?php echo $job_title ?></div>
+					<div><?php echo ($years_with_company) ? ucwords($years_with_company):''; ?></div>
+				</div>	
 				<?php } ?>
 				<a href="<?php echo $pagelink ?>" class="more">Read Bio <span>&rsaquo;</span></a>
 			</div>
