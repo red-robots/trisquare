@@ -69,7 +69,7 @@ a,input,button {
 	}
 }
 body {
-	font-family: $font_main;
+	font-family: $font_primary;
 	font-size: 15px;
 	font-weight: 300;
 	line-height: 1.6;
@@ -1689,7 +1689,7 @@ body #content .gform_wrapper ul li.gfield {
 			top: 50%;
 			transform: translateY(-50%);
 			background: transparent;
-			color: #0a53e6;
+			color: #FFF;
 			font-size: 30px;
 			font-weight: bold;
 			text-align: center;
