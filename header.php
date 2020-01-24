@@ -1,3 +1,10 @@
+<?php
+$redirectURL = my_custom_redirection();  
+if($redirectURL) {
+wp_redirect( $redirectURL );
+exit;
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

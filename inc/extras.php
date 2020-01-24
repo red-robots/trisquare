@@ -231,6 +231,29 @@ function parse_external_url( $url = '', $internal_class = 'internal-link', $exte
     return $output;
 }
 
+/* Based on Redirection plugin */
+function my_custom_redirection() {
+    global $wpdb;
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $currentBaseName = basename($actual_link);
+    $results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}redirection_items", OBJECT );
+    $redirectURL = '';
+    if($results) {
+        foreach($results as $e) {
+            $url = $e->url;
+            $action_data = $e->action_data;
+            if($url && $action_data) {
+                $path = pathinfo($url);
+                $base = ( isset($path['basename']) && $path['basename'] ) ? $path['basename'] : '';
+                if($base==$currentBaseName) {
+                    $redirectURL = $action_data;
+                    break;
+                }
+            }
+        }
+    }
+    return $redirectURL;
+}
 
 add_action('admin_head', 'bella_custom_admin_style');
 function bella_custom_admin_style() { ?>

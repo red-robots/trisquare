@@ -1954,13 +1954,14 @@ body.single-projects {
 .fancybox-navigation {
 	.fancybox-button--arrow_right,
 	.fancybox-button--arrow_left {
-		background: #FFF!important;
+		background: transparent!important;
 		opacity: 1!important;
 		padding: 0 0;
-    	// width: 30px;
-    	// height: 30px;
-    	width: 100px;
+    	width: 50px;
     	height: 100px;
+    	@include tab {
+    		width: 100px;
+    	}
 		div {
 			display: none!important;
 		}
@@ -1971,23 +1972,37 @@ body.single-projects {
 			height: 2px;
 			background: #000;
 			position: absolute;
+	    	@media screen and (max-width: $xswidth) {
+	    		background: #FFF;
+	    		filter: drop-shadow(0px 1px 3px #484848);
+	    	}
 		}
 	}
 	.fancybox-button--arrow_right {
-		right: 30px;
+		right: 10px;
+		@include tab {
+    		right: 30px;
+    	}
 		&:before {
+			right: 5px;
 			transform: translateY(-10px) rotate(45deg);
 		}
 		&:after {
+			right: 5px;
 			transform: translateY(10px) rotate(-45deg);
 		}
 	}
 	.fancybox-button--arrow_left {
-		left: 30px;
+		left: 10px;
+		@include tab {
+    		left: 30px;
+    	}
 		&:before {
+			left: 5px;
 			transform: translateY(10px) rotate(45deg);
 		}
 		&:after {
+			left: 5px;
 			transform: translateY(-10px) rotate(-45deg);
 		}
 	}
