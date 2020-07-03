@@ -48,7 +48,7 @@ if ( $posts->have_posts() ) { ?>
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<div class="imgwrap">
-									<img src="<?php echo $main_image['url'] ?>" alt="<?php echo $main_image['title'] ?>" />
+									<img src="<?php echo $main_image['sizes']['large'] ?>" alt="<?php echo $main_image['title'] ?>" />
 									<div class="gallerypaginate">
 										<a href="#" class="prev gallery-prev<?php echo $i;?>""><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M14.258 1.53L13.198.47-.061 13.728l13.259 13.258 1.06-1.06L2.061 13.728z"></path></g></svg></a>
 										<a href="#" class="next gallery-next<?php echo $i;?>""><svg fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M.198 25.926l1.06 1.06 13.259-13.258L1.258.47.198 1.53l12.197 12.198z"></path></g></svg></a>
@@ -113,7 +113,7 @@ if ( $posts->have_posts() ) { ?>
 				<div class="project <?php echo $hasphoto ?>">
 					<div class="inside">
 						<a href="<?php echo $pagelink ?>" class="projlink">
-							<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['url'];?>')"></span><?php } ?>
+							<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['sizes']['medium_large'];?>')"></span><?php } ?>
 							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 							<span class="projname"><span><?php echo $termName; ?></span></span>
 						</a>

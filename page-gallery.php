@@ -51,12 +51,12 @@ get_header(); ?>
 							$pagelink = get_term_link($t);
 							$termName = $t->name;
 							$hasphoto = ($photo) ? 'hasphoto':'nophoto';
-							$style = ($photo) ? ' style="background-image:url('.$photo['url'].')"':''
+							//$style = ($photo) ? ' style="background-image:url('.$photo['sizes']['medium'].')"':''
 						?>
 						<div class="project <?php echo $hasphoto ?>">
 							<div class="inside">
 								<a href="<?php echo $pagelink ?>" class="projlink">
-									<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['url'];?>')"></span><?php } ?>
+									<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['sizes']['large'];?>')"></span><?php } ?>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 									<span class="projname"><span><?php echo $termName; ?></span></span>
 								</a>
