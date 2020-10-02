@@ -5,6 +5,7 @@ $color_link_hover: midnightblue;
 $color_text_main: #5a6771;
 $color_menu_link: #5a6771;
 $color_grey: #eaeaea;
+$color-blue: #00599f;
 
 $font_primary: 'Merriweather', serif;
 $font_secondary: 'Open Sans', sans-serif;
@@ -44,6 +45,12 @@ $wrapper_width: 1200px;
 	table-layout: fixed;
 	clear: both;
 	*zoom: 1;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
 }
 
 // Clear after (not all clearfix need this also)
