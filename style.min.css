@@ -612,7 +612,7 @@ body.nobanner .page404 .sitemapMenu,.page404 .sitemapMenu{margin-top:20px}
 .site-footer a{display:inline-block;text-decoration:none;color:#FFF}
 .site-footer a:hover{opacity:.45}
 .site-footer .flexwrap{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.site-footer .logo-img{display:block;max-width:120px;width:100%}
+.site-footer .logo-img{display:block;max-width:200px;width:100%}
 .site-footer .social a{font-size:22px;margin:2px 2px;height:40px;line-height:40px}
 .site-footer .accolades img{width:40px;height:auto}
 .footcol.left{width:30%;background:#0033a0;padding:20px 30px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -621,7 +621,7 @@ body.nobanner .page404 .sitemapMenu,.page404 .sitemapMenu{margin-top:20px}
 .footcol.right .inside{width:100%;padding:20px 5%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .footcol.right .flexcol{padding:20px 0}
 .footcol.right .contact-info{width:235px}
-.footcol .col6{width:150px}
+.footcol .col6{width:170px}
 .footer-menu-wrap ul{margin:0;padding:0 5%;list-style:none}
 .footer-menu-wrap ul ul{display:none}
 .footer-menu-wrap ul li{float:left;width:100%}
@@ -682,7 +682,7 @@ body.subpage .single-team .hasProfPic .text{width:60%;float:right}
 .footcol.right .inside{padding:0 5%}
 .footer-menu-wrap ul li{width:auto}
 }@media(min-width:960px){#content{margin-top:20px}
-.logo{width:220px;-webkit-box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08);box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08);margin-left:5%}
+.logo{width:250px;-webkit-box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08);box-shadow:1px 1px 5px 2px rgba(0,0,0,0.08);margin-left:5%}
 .logo a{padding:18px 35px 20px}
 .main-navigation{width:80%;position:absolute;top:0;right:0;margin-top:30px}
 .main-navigation .main-menu-wrap{background:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(20%,white),to(white));background:linear-gradient(to right,rgba(255,255,255,0) 0,white 20%,white 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=1);-webkit-box-shadow:10px 1px 10px 2px rgba(0,0,0,0.05);box-shadow:10px 1px 10px 2px rgba(0,0,0,0.05);display:inline-block;float:right;padding-left:6%;padding-right:6%;height:auto;overflow:visible}
