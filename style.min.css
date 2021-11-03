@@ -626,6 +626,10 @@ body.nobanner .page404 .sitemapMenu,.page404 .sitemapMenu{margin-top:20px}
 .footer-menu-wrap ul ul{display:none}
 .footer-menu-wrap ul li{float:left;width:100%}
 .footer-menu-wrap ul a{display:inline-block;text-decoration:none;padding:5px 15px}
+#gallery-entries .swiper-slide{background-color:#f1f1f1}
+.galleries-more-button{width:100%;float:left;text-align:center;margin-top:40px}
+.galleries-more-button a.btn-default{padding:10px 35px;min-width:200px;text-align:center}
+body.tax-project-categories #loaderOverlay .loaderSpin{margin:0;position:absolute;top:45%;left:50%;-webkit-transform:translateX(-50%) translateY(-45%);transform:translateX(-50%) translateY(-45%)}
 #loaderOverlay{display:none;position:fixed;top:0;left:0;z-index:3000;width:100%;height:100%;background:rgba(0,0,0,0.45)}
 #loaderOverlay.show{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .loaderSpin,.loaderSpin:after{border-radius:50%;width:5em;height:5em}
@@ -744,6 +748,7 @@ ul.menu ul{margin-bottom:16px}
 .footcol.left{width:25%;padding:15px}
 .footcol.right{width:75%}
 }@media screen and (max-width:600px){#wpadminbar{top:-46px}
+}@media screen and (max-width:580px){.galleries-more-button a.btn-default{max-width:100%;width:100%}
 }@media screen and (max-width:480px){.wrapper{padding-left:20px;padding-right:20px}
 .section.text-middle .text,.row1.section .text{padding:1em .7em}
 .midtext.pad{padding:7% 7%}

@@ -2695,6 +2695,38 @@ body.nobanner .page404,
 		padding: 5px 15px;
 	}
 }
+
+#gallery-entries {
+  .swiper-slide {
+    background-color: #f1f1f1;
+  }
+}
+.galleries-more-button {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin-top: 40px;
+  a.btn-default {
+    padding: 10px 35px;
+    min-width: 200px;
+    text-align: center;
+    @media screen and (max-width: 580px) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+body.tax-project-categories {
+  #loaderOverlay {
+    .loaderSpin {
+      margin: 0 0;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-45%);
+    }
+  }
+}
 @media screen and (max-width: $deskwidth - 1px) {
 	.footcol {
 		.col6 {

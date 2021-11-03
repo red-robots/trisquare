@@ -16,6 +16,9 @@ function my_login_logo() {
   $logo_url = ($logoImg) ? $logoImg[0] : '';
   if($custom_logo_id) { ?>
   <style type="text/css">
+    body.login {
+      background-color:  #FFF;
+    }
     body.login div#login h1 a {
       background-image: url(<?php echo $logo_url; ?>);
       background-size: contain;
@@ -25,6 +28,11 @@ function my_login_logo() {
     }
     .login #backtoblog, .login #nav {
       text-align: center;
+    }
+    .login form#loginform {
+      box-shadow: 0 5px 26px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      border: 1px solid #ededed;
     }
 
   </style>

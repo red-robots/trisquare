@@ -65,6 +65,7 @@ require get_template_directory() . '/inc/block-all-registration-and-comments.php
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+require get_template_directory() . '/inc/ajax.php';
 
 //custom_insert_new_user();
 

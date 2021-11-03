@@ -16,29 +16,25 @@ $currentCategory = $term->name;
 
 <?php  
 /* Individual Projects */
-$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $post_type = 'projects';
-$perpage = 3;
 $args = array(
-  'posts_per_page'  => $perpage,
-  'post_type'       => $post_type,
-  'paged'           => $paged,
-  'post_status'     => 'publish',
-  'tax_query'       => array(
-      array(
-        'taxonomy'  => $taxonomy,
-        'terms'     => $term_id,
-        'include_children' => false 
-      )
-  )
+	'posts_per_page' => -1,
+    'post_type' => $post_type,
+    'post_status' => 'publish',
+    'tax_query' => array(
+        array(
+            'taxonomy' => $taxonomy,
+            'terms' => $term_id,
+            'include_children' => false 
+        )
+    )
 );
 $items = get_posts( $args );
 $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 $posts = new WP_Query($args);
-$found = $posts->found_posts;
 if ( $posts->have_posts() ) { ?>
 <section class="section projects-by-category style2 cf">
-	<div id="gallery-entries" class="wrapper">
+	<div class="wrapper">
 		<?php $i=1; while ( $posts->have_posts() ) : $posts->the_post();
 			$main_image = get_field('main_image');
 			$projectName = get_the_title();
@@ -93,15 +89,7 @@ if ( $posts->have_posts() ) { ?>
 			<?php $i++; } ?>
 		<?php endwhile; wp_reset_postdata(); ?>	
 	</div>
-
-  <?php  
-  $total_pages = $posts->max_num_pages;
-  if ($total_pages > 1){ ?>
-  <div class="galleries-more-button"><a href="#" data-posttype="<?php echo $post_type ?>" data-total="<?php echo $found ?>" data-currentpage="<?php echo $paged ?>" data-taxonomy="<?php echo $taxonomy ?>" data-termid="<?php echo $term_id ?>" data-totalpages="<?php echo $total_pages ?>" id="galleriesMoreBtn" data-perpage="<?php echo $perpage ?>" data-index="<?php echo $i ?>" class="btn btn-default">Load More</a></div>
-  <?php } ?>
-
 </section>
-
 
 
 <?php  
