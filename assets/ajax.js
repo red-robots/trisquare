@@ -33,12 +33,12 @@ jQuery(document).ready(function ($) {
       success: function(response) {
         setTimeout(function(){
           $("#loaderOverlay").hide();
-        },500);
+        },300);
 
         if(response.result) {
           setTimeout(function(){
             $("#gallery-entries").append(response.result);
-          },505);
+          },305);
         } 
         if(response.show_more_button==false) {
           button.remove();
