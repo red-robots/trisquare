@@ -7,6 +7,7 @@ function myscript_enqueuer() {
   wp_enqueue_script( 'ajax_script' );
 }
 
+add_action('wp_ajax_nopriv_get_gallery_entries', 'get_gallery_entries');
 add_action("wp_ajax_get_gallery_entries", "get_gallery_entries");
 function get_gallery_entries() {
    
