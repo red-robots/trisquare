@@ -36,9 +36,7 @@ jQuery(document).ready(function ($) {
         },300);
 
         if(response.result) {
-          setTimeout(function(){
-            $("#gallery-entries").append(response.result);
-          },305);
+          $("#gallery-entries").append(response.result);
         } 
         if(response.show_more_button==false) {
           button.remove();
@@ -51,6 +49,7 @@ jQuery(document).ready(function ($) {
 
         $(".gallery-swiper.new .gallerySwipe").each(function () {
           var num = $(this).attr("data-id");
+          console.log(num);
           var target = $(this);
           var galleryId = $(this).attr("id");
           var galleryIDSelector = '#' + galleryId;
@@ -67,32 +66,33 @@ jQuery(document).ready(function ($) {
           });
         });
 
-        $('.gallery-swiper.new').each(function () {
-          var mySwiper = $(this).find(".gallerySwipe");
-          $(this).find("a.enlarge").fancybox({
-            protect: true,
-            loop: false,
-            buttons: ['close'],
-            hash: false,
-            backFocus: false,
-            image: {
-              preload: true
-            },
-            fullScreen: {
-              autoStart: false
-            },
-            helpers: {
-              overlay: {
-                closeClick: false
-              }
-            },
-            keys: {
-              close: null
-            },
-            afterLoad: function afterLoad(instance, current) {},
-            afterClose: function afterClose() {}
-          });
-        });
+        // $('.gallery-swiper.new').each(function () {
+        //   var mySwiper = $(this).find(".gallerySwipe");
+        //   $(this).find("a.enlarge").fancybox({
+        //     protect: true,
+        //     loop: false,
+        //     buttons: ['close'],
+        //     hash: false,
+        //     backFocus: false,
+        //     image: {
+        //       preload: true
+        //     },
+        //     fullScreen: {
+        //       autoStart: false
+        //     },
+        //     helpers: {
+        //       overlay: {
+        //         closeClick: false
+        //       }
+        //     },
+        //     keys: {
+        //       close: null
+        //     },
+        //     afterLoad: function afterLoad(instance, current) {},
+        //     afterClose: function afterClose() {}
+        //   });
+        // });
+        
 
       },
     });

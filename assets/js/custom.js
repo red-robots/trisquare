@@ -1,4 +1,11 @@
 "use strict";
+
+/**
+ *	Custom jQuery Scripts
+ *	
+ *	Developed by: Austin Crane	
+ *	Designed by: Austin Crane
+ */
 jQuery(document).ready(function ($) {
   /* Slideshow */
   var swiper = new Swiper('#slideshow', {
