@@ -47,6 +47,9 @@ jQuery(document).ready(function ($) {
       },
       complete: function() {
 
+        const observer = lozad();
+        observer.observe();
+        
         $(".gallery-swiper.new .gallerySwipe").each(function () {
           var num = $(this).attr("data-id");
           var target = $(this);

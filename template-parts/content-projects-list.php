@@ -34,6 +34,7 @@ $args = array(
 );
 $items = get_posts( $args );
 $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
+$dummy = get_bloginfo("template_url") . "/images/placeholder.png";
 $posts = new WP_Query($args);
 $found = $posts->found_posts;
 if ( $posts->have_posts() ) { ?>
@@ -46,42 +47,10 @@ if ( $posts->have_posts() ) { ?>
 			$pagelink = get_permalink();
 			$galleries = get_field("gallery");
       $gallery_id = get_the_ID();
-			if($main_image) { ?>
-			<div id="gallery<?php echo $gallery_id;?>" class="gallery-swiper">
-				<div class="gallery-wrap"> 
-					<div id="galleryItem<?php echo $gallery_id;?>" data-id="<?php echo $gallery_id;?>" class="gallerySwipe">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="imgwrap">
-									<img src="<?php echo $main_image['url'] ?>" alt="<?php echo $main_image['title'] ?>" />
-									<div class="gallerypaginate">
-										<a href="#" class="prev gallery-prev<?php echo $gallery_id;?>"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M14.258 1.53L13.198.47-.061 13.728l13.259 13.258 1.06-1.06L2.061 13.728z"></path></g></svg></a>
-										<a href="#" class="next gallery-next<?php echo $gallery_id;?>""><svg fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M.198 25.926l1.06 1.06 13.259-13.258L1.258.47.198 1.53l12.197 12.198z"></path></g></svg></a>
-									</div>
-									<a href="<?php echo $main_image['url'] ?>" data-fancybox="images" rel="group<?php echo $gallery_id;?>" title="Fullscreen" class="enlarge fancybox-button fancybox-button--fsenter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg><span class="sr">Fullscreen</span></a>
-								</div>
-							</div>
-							<?php if ($galleries) { ?>
-								<?php foreach ($galleries as $g) { ?>
-								<div class="swiper-slide">
-									<div class="imgwrap">
-										<img src="<?php echo $g['url']?>" alt="<?php echo $g['title'] ?>" />
-										<div class="gallerypaginate">
-											<a href="#" class="prev gallery-prev<?php echo $gallery_id;?>"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M14.258 1.53L13.198.47-.061 13.728l13.259 13.258 1.06-1.06L2.061 13.728z"></path></g></svg></a>
-											<a href="#" class="next gallery-next<?php echo $gallery_id;?>"><svg fill="currentColor" stroke="none" width="30" height="45" viewBox="0 0 20 30"><g fill-rule="evenodd"><path fill-rule="nonzero" d="M.198 25.926l1.06 1.06 13.259-13.258L1.258.47.198 1.53l12.197 12.198z"></path></g></svg></a>
-										</div>
-										<a href="<?php echo $g['url']?>" data-fancybox="images" rel="group<?php echo $gallery_id;?>" title="Fullscreen" class="enlarge fancybox-button fancybox-button--fsenter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"></path></svg><span class="sr">Fullscreen</span></a>
-									</div>
-								</div>
-								<?php } ?>
-							<?php } ?>
-						</div>
-					</div>
-					<img src="<?php echo $placeholder  ?>" alt="" aria-hidden="true" class="placeholder">
-				</div>
-				<div class="project-name"><span><?php echo $projectName; ?></span></div>
-			</div>
-			<?php $i++; } ?>
+			if($main_image) { 
+			$custom_class = 'init';
+      include( locate_template('template-parts/gallery-list.php') );
+			$i++; } ?>
 		<?php endwhile; wp_reset_postdata(); ?>	
 	</div>
 
@@ -132,11 +101,13 @@ if ( $posts->have_posts() ) { ?>
 <?php } ?>
 
 <script type="text/javascript">
+const observer = lozad();
+observer.observe();
+
 jQuery(document).ready(function ($) {
   if( $(".gallery-swiper").length ) {
     $(".gallery-swiper .gallerySwipe").each(function () {
       var num = $(this).attr("data-id");
-      console.log(num);
       var target = $(this);
       var galleryId = $(this).attr("id");
       var galleryIDSelector = '#' + galleryId;
