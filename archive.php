@@ -17,7 +17,10 @@ get_header(); ?>
 
 		<?php if( $taxonomy == 'project-categories' ) { ?>
 
-			<?php get_template_part('template-parts/content','projects-list'); ?>
+			<?php 
+        //get_template_part('template-parts/content','projects-list'); 
+        get_template_part('template-parts/content','projects-list-new');
+      ?>
 
 		<?php } else { ?>
 
