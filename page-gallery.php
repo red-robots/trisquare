@@ -55,7 +55,7 @@ get_header(); ?>
 						?>
 						<div class="project <?php echo $hasphoto ?>">
 							<div class="inside">
-								<a href="<?php echo $pagelink ?>" class="projlink">
+								<a href="<?php echo $pagelink ?>" class="projlink show-title">
 									<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['sizes']['large'];?>')"></span><?php } ?>
 									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 									<span class="projname"><span><?php echo $termName; ?></span></span>

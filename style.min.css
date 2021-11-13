@@ -439,6 +439,9 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:25px}
 .section.projects-list .project .projlink{display:block;width:100%;float:left;position:relative}
 .section.projects-list .project .projlink:hover .projname{opacity:1;visibility:visible}
 .section.projects-list .project .projlink:hover .projname span{-webkit-transform:translateY(0);transform:translateY(0)}
+.section.projects-list .project .projlink.show-title .projname{display:block;width:100%;height:auto;background-color:transparent;opacity:1;visibility:visible}
+.section.projects-list .project .projlink.show-title .projname span{display:inline-block;opacity:1;visibility:visible;-webkit-transform:none;transform:none;float:left;padding:10px 20px;background:rgba(0,0,0,0.65);min-width:230px;position:relative;top:-20px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section.projects-list .project .projlink.show-title:hover .projname span{background:#00549c}
 .section.projects-list .project.nophoto a.projlink:before{content:"Photo Coming Soon";display:block;font-size:1.3rem;line-height:1.2;color:#c7c7c7;text-align:center;width:100%;position:absolute;top:50%;left:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .section.projects-list .project.nophoto a.projlink:hover:before{opacity:.2}
 .section.projects-list.small-thumbs{border-top:5px solid #CCC;padding-top:40px}
