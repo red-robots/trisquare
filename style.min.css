@@ -501,6 +501,7 @@ body #content .gform_wrapper ul li.gfield#field_1_2{margin-top:25px}
 .section.gallery-section .galleries .gimage{width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
 .fancybox-is-open .fancybox-bg{opacity:.92}
 body.single-projects .fancybox-stage{margin:0 30px}
+body.single-projects #content{margin-top:0}
 body.single-projects h1.page-title{font-size:1.5rem;margin:30px 0 10px}
 body.single-projects .section{width:100%;float:left;margin-top:20px}
 body.single-projects .gallery-swiper{margin-top:0}
@@ -746,6 +747,7 @@ body.home .banner-wrap,#slideshow.swiper-container{height:95vh}
 .section.projects-list.small-thumbs .project{width:25%}
 .gallery-swiper{min-height:700px}
 .section.gallery-section .galleries .thumb{width:25%}
+body.single-projects.nobanner .main-navigation{top:7px}
 .section.process .steps.columns4 .step{width:25%}
 .section.process .steps.columns5 .step{width:20%}
 .section.process .steps.columnsMax .step{width:25%}
