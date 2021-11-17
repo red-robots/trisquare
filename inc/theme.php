@@ -30,9 +30,10 @@ function my_login_logo() {
       text-align: center;
     }
     .login form#loginform {
-      box-shadow: 0 5px 26px rgba(0,0,0,0.15);
+      /*box-shadow: 0 5px 26px rgba(0,0,0,0.15);*/
+      /*border: 1px solid #ededed;*/
       border-radius: 10px;
-      border: 1px solid #ededed;
+      border: 1px solid #dbdbdb;
     }
 
   </style>
