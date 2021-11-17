@@ -3,6 +3,7 @@ $term = get_queried_object();
 $term_id = $term->term_id;
 $taxonomy = $term->taxonomy;
 $currentCategory = $term->name;
+$placeholder = get_bloginfo("template_url") . "/images/rectangle.png";
 ?>
 <section class="section text-middle">
 	<div class="wrapper">
@@ -18,11 +19,9 @@ $currentCategory = $term->name;
 /* Individual Projects */
 $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $post_type = 'projects';
-$perpage = 3;
 $args = array(
-  'posts_per_page'  => $perpage,
+  'posts_per_page'  => -1,
   'post_type'       => $post_type,
-  'paged'           => $paged,
   'post_status'     => 'publish',
   'tax_query'       => array(
       array(
@@ -34,32 +33,42 @@ $args = array(
 );
 $items = get_posts( $args );
 $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
+$blurred = get_bloginfo("template_url") . "/images/blurred.png";
 $dummy = get_bloginfo("template_url") . "/images/placeholder.png";
 $posts = new WP_Query($args);
 $found = $posts->found_posts;
 if ( $posts->have_posts() ) { ?>
 <section class="section projects-by-category style2 cf">
-	<div id="gallery-entries" class="wrapper">
+	<div id="gallery-entries-grid" class="wrapper">
+    <div class="grid">
 		<?php $i=1; while ( $posts->have_posts() ) : $posts->the_post();
 			$main_image = get_field('main_image');
-			$projectName = get_the_title();
+			$title = get_the_title();
 			$hasphoto = ($main_image) ? 'hasphoto':'nophoto';
 			$pagelink = get_permalink();
 			$galleries = get_field("gallery");
+      $count = ($galleries) ? count($galleries): '';
+      $count = false;
       $gallery_id = get_the_ID();
-			if($main_image) { 
-			$custom_class = 'init';
-      include( locate_template('template-parts/gallery-list.php') );
-			$i++; } ?>
+			if($main_image) { ?>
+			<div class="image-block">
+        <div class="inner">
+          <a href="<?php echo $pagelink ?>" class="image-info" data-id="<?php echo $gallery_id ?>">
+            <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+            <span class="img lozad" data-background-image="<?php echo $main_image['url'] ?>"></span>
+            <span class="title"><span><?php echo $title; ?></span></span>
+            <?php if ($count>1) { ?>
+            <span class="count">
+              <b>+<?php echo $count ?></b>
+            </span> 
+            <?php } ?>
+          </a>
+        </div>
+      </div>
+			<?php $i++; } ?>
 		<?php endwhile; wp_reset_postdata(); ?>	
+    </div>
 	</div>
-
-  <?php  
-  $total_pages = $posts->max_num_pages;
-  if ($total_pages > 1){ ?>
-  <div class="galleries-more-button"><a href="#" data-posttype="<?php echo $post_type ?>" data-total="<?php echo $found ?>" data-currentpage="<?php echo $paged ?>" data-taxonomy="<?php echo $taxonomy ?>" data-termid="<?php echo $term_id ?>" data-totalpages="<?php echo $total_pages ?>" id="galleriesMoreBtn" data-perpage="<?php echo $perpage ?>" data-index="<?php echo $i ?>" class="btn btn-default">Load More</a></div>
-  <?php } ?>
-
 </section>
 
 
@@ -85,7 +94,7 @@ if ( $posts->have_posts() ) { ?>
 				<div class="project <?php echo $hasphoto ?>">
 					<div class="inside">
 						<a href="<?php echo $pagelink ?>" class="projlink">
-							<?php if ($photo) { ?><span class="projImg" style="background-image:url('<?php echo $photo['sizes']['medium_large'];?>')"></span><?php } ?>
+							<?php if ($photo) { ?><span class="projImg lozad" data-background-image="<?php echo $photo['sizes']['medium_large'] ?>"></span><?php } ?>
 							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
 							<span class="projname"><span><?php echo $termName; ?></span></span>
 						</a>
@@ -103,54 +112,7 @@ if ( $posts->have_posts() ) { ?>
 <script type="text/javascript">
 const observer = lozad();
 observer.observe();
-
 jQuery(document).ready(function ($) {
-  if( $(".gallery-swiper").length ) {
-    $(".gallery-swiper .gallerySwipe").each(function () {
-      var num = $(this).attr("data-id");
-      var target = $(this);
-      var galleryId = $(this).attr("id");
-      var galleryIDSelector = '#' + galleryId;
-      var gallerySwiper = new Swiper(galleryIDSelector, {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        effect: 'slide',
-        loop: false,
-        autoplay: false,
-        navigation: {
-          nextEl: '.gallery-next' + num,
-          prevEl: '.gallery-prev' + num
-        }
-      });
-    });
-
-    $('.gallery-swiper').each(function () {
-      var mySwiper = $(this).find(".gallerySwipe");
-      $(this).find("a.enlarge").fancybox({
-        protect: true,
-        loop: false,
-        buttons: ['close'],
-        hash: false,
-        backFocus: false,
-        image: {
-          preload: true
-        },
-        fullScreen: {
-          autoStart: false
-        },
-        helpers: {
-          overlay: {
-            closeClick: false
-          }
-        },
-        keys: {
-          close: null
-        },
-        afterLoad: function afterLoad(instance, current) {},
-        afterClose: function afterClose() {}
-      });
-    });
-
-  }
+  
 });
 </script>
