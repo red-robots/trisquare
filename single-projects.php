@@ -1,6 +1,6 @@
 <?php
 $banner = get_slider();
-$placeholder = get_bloginfo("template_url") . "/images/blurred.png";
+$placeholder = get_bloginfo("template_url") . "/images/rectangle.png";
 $rectangle = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 $taxonomy = 'project-categories';
 $post_type = get_post_type();

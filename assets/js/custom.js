@@ -3,8 +3,8 @@
 /**
  *	Custom jQuery Scripts
  *	
- *	Developed by: Austin Crane	
- *	Designed by: Austin Crane
+ *	Developed by: Lisa DeBona
+ *	Date Modified: 11.19.2021
  */
 jQuery(document).ready(function ($) {
   /* Slideshow */
@@ -85,7 +85,12 @@ jQuery(document).ready(function ($) {
       keys: {
         close: null
       },
-      afterLoad: function afterLoad(instance, current) {},
+      afterLoad: function afterLoad(instance, current) {
+        if (current.type === 'image') {
+          current.width = current.width * 2.5;
+          current.height = current.height * 2.5;
+        }
+      },
       afterClose: function afterClose() {}
     });
   }); // $(document).on("click",".gallerypaginate .next",function(e){

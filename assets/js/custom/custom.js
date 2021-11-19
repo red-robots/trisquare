@@ -1,8 +1,8 @@
 /**
  *	Custom jQuery Scripts
  *	
- *	Developed by: Austin Crane	
- *	Designed by: Austin Crane
+ *	Developed by: Lisa DeBona
+ *	Date Modified: 11.19.2021
  */
 
 jQuery(document).ready(function ($) {
@@ -24,26 +24,26 @@ jQuery(document).ready(function ($) {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-    });
+  });
 
 
-    $(".gallerySwipe").each(function(){
-    	var num = $(this).attr("data-id");
-    	var target = $(this);
-    	var galleryId = $(this).attr("id");
-    	var galleryIDSelector = '#'+galleryId;
-    	var gallerySwiper = new Swiper(galleryIDSelector, {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			effect: 'slide', 
-			loop: false,
-			autoplay: false,
-			navigation: {
-				nextEl: '.gallery-next'+num,
-				prevEl: '.gallery-prev'+num,
-			},
-	    });
+  $(".gallerySwipe").each(function(){
+  	var num = $(this).attr("data-id");
+  	var target = $(this);
+  	var galleryId = $(this).attr("id");
+  	var galleryIDSelector = '#'+galleryId;
+  	var gallerySwiper = new Swiper(galleryIDSelector, {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		effect: 'slide', 
+		loop: false,
+		autoplay: false,
+		navigation: {
+			nextEl: '.gallery-next'+num,
+			prevEl: '.gallery-prev'+num,
+		},
     });
+  });
 	
 	// $('[data-fancybox]').fancybox({
 	// 	protect: true,
@@ -86,11 +86,14 @@ jQuery(document).ready(function ($) {
 			    close  : null
 			},
 			afterLoad : function(instance, current) {
+        if ( current.type === 'image' ) {
+          current.width  = current.width  * 2.5;
+          current.height = current.height * 2.5;
+        }
+      },
+		  afterClose: function() {
 
-		    },
-		    afterClose: function() {
-
-		    }
+		  }
 		});
 	});
 
@@ -148,14 +151,14 @@ jQuery(document).ready(function ($) {
     			});
 
     			$('[data-fancybox]').fancybox({
-					protect: true,
-					loop: false,
-					buttons : ['close','thumbs','fullScreen'],
-					hash : false,
-					afterLoad : function(instance, current) {
-						var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
-						$(".fancybox-content").addClass('padded');
-						$(".fancybox-content").append(closeBtn);
+  					protect: true,
+  					loop: false,
+  					buttons : ['close','thumbs','fullScreen'],
+  					hash : false,
+  					afterLoad : function(instance, current) {
+						  var closeBtn = "<a href='#' id='closefancyPic'><span>x</span></a>";
+						  $(".fancybox-content").addClass('padded');
+						  $(".fancybox-content").append(closeBtn);
 				    }
 				});
 
