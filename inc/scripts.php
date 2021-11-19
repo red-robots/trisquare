@@ -29,7 +29,7 @@ function bellaworks_scripts() {
   wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom.min.js', 
-    array(), '20211110', 
+    array(), '20211119', 
     true 
   );
 
